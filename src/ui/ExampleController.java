@@ -17,6 +17,7 @@ public class ExampleController implements Initializable{
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
+		// we create a RingProgreesIndicator the ring ui
 		RingProgressIndicator r = new RingProgressIndicator();
 		r.setRingWidth(200);
 		r.makeIndeterminate();
