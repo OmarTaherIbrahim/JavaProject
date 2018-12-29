@@ -1,0 +1,7 @@
+@charset "UTF-8";
+.jfx-button {
+	-fx-background-image:url('@../Resources/Icon/audio.png');
+}
+.button {
+	-fx-background-image:url('@../Resources/Icon/audio.png');
+}
