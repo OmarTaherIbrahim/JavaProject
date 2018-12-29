@@ -8,10 +8,12 @@ import javafx.scene.Scene;
 
 
 public class Main extends Application {
+	public static Stage stage;
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("../ui/ProfileScreen.fxml"));
+			stage = primaryStage;
+			Parent root = FXMLLoader.load(getClass().getResource("../ui/FXML/LoginForm.fxml"));
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("");
