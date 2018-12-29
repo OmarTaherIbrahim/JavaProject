@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #EEEEEE;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXButton layoutX="1020.0" layoutY="1.0" prefHeight="718.0" prefWidth="57.0" ripplerFill="#e1e1e1" text="&gt;" textFill="#f9690e">
+         <font>
+            <Font name="Verdana Bold" size="31.0" />
+         </font></JFXButton>
+      <JFXButton layoutX="-14.0" layoutY="-2.0" prefHeight="724.0" prefWidth="65.0" ripplerFill="#e1e1e1" text="&lt;" textFill="#f9690e">
+         <font>
+            <Font name="Verdana Bold" size="31.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="500.0" fitWidth="500.0" layoutX="295.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="295.0" AnchorPane.rightAnchor="304.0" AnchorPane.topAnchor="5.0">
+         <image>
+            <Image url="@../../../Resources/a_apple.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="500.0" layoutY="533.0" style="-fx-alignment: center;" text="Label" textAlignment="CENTER" textFill="#f9690e" AnchorPane.leftAnchor="450.0" AnchorPane.rightAnchor="450.0" AnchorPane.topAnchor="533.0">
+         <font>
+            <Font size="46.0" />
+         </font>
+      </Label>
+      <JFXButton id="audioButton" contentDisplay="GRAPHIC_ONLY" layoutX="455.0" layoutY="614.0" prefHeight="64.0" prefWidth="203.0" style="-fx-background-image: url('@../Resources/Icon/audio.png');" stylesheets="@style/play.css">
+         <effect>
+            <Bloom />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Resources/Icon/audio.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

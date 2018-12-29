@@ -1,10 +1,160 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.ExampleController">
+<AnchorPane prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #6C7A89 #6C7A89;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.ExampleController">
    <children>
-      <StackPane fx:id="stackPane" layoutX="50.0" layoutY="63.0" prefHeight="300.0" prefWidth="300.0" />
+      <TabPane cache="true" cacheHint="QUALITY" depthTest="ENABLE" mouseTransparent="true" prefHeight="720.0" prefWidth="1089.0" side="LEFT" style="-fx-background-color: #6c7a89; -fx-opaque-insets: 100;" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab closable="false" style="-fx-background-color: #6C7A89; -fx-text-fill: #6C7A89;" text="Profile">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #6C7A89 #6C7A89;">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="12.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Resources/Icon/Profile/profile.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="nameTxt" layoutX="10.0" layoutY="159.0" prefHeight="31.0" prefWidth="164.0" style="-fx-alignment: center;" text="Name" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="26.0" />
+                           </font>
+                        </Label>
+                        <GridPane layoutX="246.0" layoutY="1.0" prefHeight="709.0" prefWidth="789.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <GridPane prefHeight="295.0" prefWidth="226.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="306.0" minHeight="10.0" prefHeight="306.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="170.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <StackPane fx:id="stackPaneAlphabets" prefHeight="300.0" prefWidth="300.0" />
+                                    <Label fx:id="alphabetTxt" prefHeight="43.0" prefWidth="263.0" style="-fx-alignment: center;" text="Alphabets" textAlignment="CENTER" textFill="#f4d03f" wrapText="true" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                              <GridPane prefHeight="295.0" prefWidth="226.0" GridPane.columnIndex="1">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="300.0" minHeight="10.0" prefHeight="299.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="172.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <StackPane fx:id="stackPaneColor" prefHeight="300.0" prefWidth="300.0" />
+                                    <Label fx:id="colorTxt" prefHeight="43.0" prefWidth="262.0" style="-fx-alignment: center;" text="Color" textAlignment="CENTER" textFill="#2abb9b" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                              <GridPane prefHeight="295.0" prefWidth="226.0" GridPane.columnIndex="2">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="299.0" minHeight="10.0" prefHeight="299.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="141.0" minHeight="10.0" prefHeight="56.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <StackPane fx:id="stackPaneShape" prefHeight="195.0" prefWidth="226.0" />
+                                    <Label fx:id="shapeTxt" prefHeight="43.0" prefWidth="262.0" style="-fx-alignment: center;" text="Shape" textAlignment="CENTER" textFill="#f62459" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font name="Verdana" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                              <GridPane prefHeight="295.0" prefWidth="226.0" GridPane.rowIndex="1">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="291.0" minHeight="10.0" prefHeight="291.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="173.0" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label fx:id="subTxt" prefHeight="43.0" prefWidth="262.0" style="-fx-alignment: center;" text="Addition" textAlignment="CENTER" textFill="#763568" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                              <GridPane prefHeight="295.0" prefWidth="226.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="305.0" minHeight="10.0" prefHeight="301.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="173.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <StackPane fx:id="stackPaneSubtraction" prefHeight="300.0" prefWidth="300.0" />
+                                    <Label fx:id="multiTxt" prefHeight="43.0" prefWidth="260.0" style="-fx-alignment: center;" text="Subtraction" textAlignment="CENTER" textFill="#f9690e" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                              <GridPane prefHeight="295.0" prefWidth="226.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="295.0" minHeight="10.0" prefHeight="295.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="143.0" minHeight="10.0" prefHeight="59.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <StackPane fx:id="stackPaneMultiplication" prefHeight="300.0" prefWidth="300.0" />
+                                    <Label fx:id="addTxt" prefHeight="43.0" prefWidth="262.0" style="-fx-alignment: center;" text="Multiplication" textAlignment="CENTER" textFill="#59abe3" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </GridPane>
+                        <StackPane fx:id="stackPaneAddition" layoutX="-99.0" layoutY="12.0" prefHeight="300.0" prefWidth="300.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab style="-fx-background-color: #6C7A89; -fx-font-color: #fff;" text="Levels">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="707.0" prefWidth="1056.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
    </children>
 </AnchorPane>
