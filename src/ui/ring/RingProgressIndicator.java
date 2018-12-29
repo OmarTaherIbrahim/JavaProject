@@ -39,6 +39,12 @@ public class RingProgressIndicator extends ProgressCircleIndicator {
     public RingProgressIndicator() {
         this.getStylesheets().add(getClass().getResource("/style/ring/ringprogress.css").toExternalForm());
         this.getStyleClass().add("ringindicator");
+        this.setStyle("circleindicator-color: #f6e58d;");
+    }
+    public RingProgressIndicator(String style) {
+        this.getStylesheets().add(getClass().getResource("/style/ring/ringprogress.css").toExternalForm());
+        this.getStyleClass().add("ringindicator");
+        this.setStyle(style);
     }
 
     @Override
