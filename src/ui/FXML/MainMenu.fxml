@@ -14,13 +14,13 @@
    <children>
       <BorderPane layoutX="262.0" layoutY="41.0" prefHeight="530.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
-            <VBox BorderPane.alignment="CENTER">
+            <VBox style="-fx-background-color: lightblue;" BorderPane.alignment="CENTER">
                <children>
-                  <JFXButton contentDisplay="GRAPHIC_ONLY">
+                  <JFXButton contentDisplay="GRAPHIC_ONLY" style="-fx-background-radius: 70px; -fx-border-radius: 70px; -fx-border-style: solid; -fx-border-width: 3px;">
                      <graphic>
                         <ImageView fitHeight="137.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../Resources/d_dog.png" />
+                              <Image url="@../../../Resources/planets-09.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -40,7 +40,7 @@
             </VBox>
          </top>
          <center>
-            <VBox BorderPane.alignment="CENTER">
+            <VBox style="-fx-background-color: silver;" BorderPane.alignment="CENTER">
                <children>
                   <JFXButton contentDisplay="GRAPHIC_ONLY" text="Button" textAlignment="CENTER">
                      <graphic>
