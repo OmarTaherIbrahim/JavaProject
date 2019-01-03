@@ -3,7 +3,7 @@ package ui;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import Data.UserInfo;
+import data.UserInfo;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -48,7 +48,7 @@ public class ExampleController implements Initializable{
 		initializeRings();
 		fillAllRings();
 		
-		
+//		nameTxt.getScene().getStylesheets().add(getClass().getResource("../style/Profile.css").toExternalForm());
 		nameTxt.setText(UserInfo.UserName);
 	}
 	private RingProgressIndicator createRing(String style) {

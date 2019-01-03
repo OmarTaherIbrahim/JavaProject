@@ -1,49 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="720.0" maxWidth="1080.0" minHeight="720.0" minWidth="1080.0" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #EEEEEE;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="530.0" maxWidth="800.0" minHeight="530.0" minWidth="800.0" prefHeight="530.0" prefWidth="800.0" style="-fx-background-color: #EEEEEE;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.LearnController">
    <children>
-      <JFXButton layoutX="1020.0" layoutY="1.0" prefHeight="718.0" prefWidth="57.0" ripplerFill="#e1e1e1" text="&gt;" textFill="#f9690e">
+      <VBox layoutX="225.0" prefHeight="530.0" prefWidth="351.0" style="-fx-alignment: center;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="224.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="letterTxt" prefHeight="64.0" prefWidth="203.0" style="-fx-alignment: center;" text="A" textAlignment="CENTER" textFill="#f9690e">
+               <font>
+                  <Font size="84.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="image" fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../res/alphabets/Apple.png" />
+               </image>
+               <viewport>
+                  <Rectangle2D />
+               </viewport>
+            </ImageView>
+            <Label fx:id="nameTxt" prefHeight="82.0" prefWidth="306.0" style="-fx-alignment: center;" text="Apple" textAlignment="CENTER" textFill="#f9690e">
+               <font>
+                  <Font size="46.0" />
+               </font>
+            </Label>
+            <JFXButton id="audioButton" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" onAction="#playAudio" prefHeight="64.0" prefWidth="203.0" style="-fx-background-image: url('@../Resources/Icon/audio.png');" stylesheets="@style/play.css">
+               <effect>
+                  <Bloom />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../res/icon/audio.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <MediaView fx:id="mediaView" fitHeight="25.0" fitWidth="100.0" />
+         </children>
+      </VBox>
+      <JFXButton focusTraversable="false" layoutX="731.0" layoutY="1.0" onAction="#btnGoRight" prefHeight="530.0" prefWidth="69.0" ripplerFill="#e1e1e1" text="&gt;" textFill="#f9690e" AnchorPane.bottomAnchor="-1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
          <font>
             <Font name="Verdana Bold" size="31.0" />
          </font></JFXButton>
-      <JFXButton layoutX="-14.0" layoutY="-2.0" prefHeight="724.0" prefWidth="65.0" ripplerFill="#e1e1e1" text="&lt;" textFill="#f9690e">
+      <JFXButton focusTraversable="false" layoutY="1.0" onAction="#btnGoLeft" prefHeight="530.0" prefWidth="69.0" ripplerFill="#e1e1e1" text="&lt;" textFill="#f9690e" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="1.0">
          <font>
             <Font name="Verdana Bold" size="31.0" />
          </font>
-      </JFXButton>
-      <ImageView fitHeight="500.0" fitWidth="500.0" layoutX="295.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="295.0" AnchorPane.rightAnchor="304.0" AnchorPane.topAnchor="5.0">
-         <image>
-            <Image url="@../../../Resources/a_apple.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="500.0" layoutY="533.0" style="-fx-alignment: center;" text="Label" textAlignment="CENTER" textFill="#f9690e" AnchorPane.leftAnchor="450.0" AnchorPane.rightAnchor="450.0" AnchorPane.topAnchor="533.0">
-         <font>
-            <Font size="46.0" />
-         </font>
-      </Label>
-      <JFXButton id="audioButton" contentDisplay="GRAPHIC_ONLY" layoutX="455.0" layoutY="614.0" prefHeight="64.0" prefWidth="203.0" style="-fx-background-image: url('@../Resources/Icon/audio.png');" stylesheets="@style/play.css">
-         <effect>
-            <Bloom />
-         </effect>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <graphic>
-            <ImageView fitHeight="50.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Resources/Icon/audio.png" />
-               </image>
-            </ImageView>
-         </graphic>
       </JFXButton>
    </children>
 </AnchorPane>

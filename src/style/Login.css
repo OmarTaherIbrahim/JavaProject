@@ -1,0 +1,20 @@
+*{
+	fx-background:#EEEEEE;
+	fx-accent:#f9690e;
+}
+.jfx-text-field {
+	-jfx-focus-color:fx-accent;
+}
+.jfx-password-field {
+	-jfx-focus-color:fx-accent;
+}
+.jfx-button .jfx-rippler{
+ 	-jfx-rippler-fill:fx-accent;
+}
+.hyperlink{
+	-fx-text-fill :fx-accent;
+}
+.loginbtn{
+	-fx-text-fill :fx-background;
+	-fx-background-color : fx-accent;
+}
