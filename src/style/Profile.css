@@ -1,0 +1,36 @@
+*{
+	fx-background:#EEEEEE;
+	fx-accent-color:#f9690e;
+}
+.tab-label{
+	-fx-text-fill:fx-accent-color;
+}
+.tab {
+    -fx-pref-width: 220;
+    -fx-min-width: 100;
+    -fx-max-width: 100;
+    -fx-background-color:fx-background;
+   -fx-text-fill:fx-accent-color; 
+    -fx-focus-color:fx-accent-color;
+    -fx-faint-focus-color:fx-accent-color;
+}
+.jfx-tab-pane .tab-header-area .tab-selected-line{
+	-fx-background-color:fx-accent-color;
+}
+.root {
+	-fx-background-color:fx-background;
+}
+.tab-header-background{
+	-fx-background-color:transparent;
+}
+.label{
+	
+}
+.accenttext{
+	-fx-text-fill:fx-accent-color;
+	-fx-alignment:center;
+}
+#nametext {
+	-fx-text-fill:fx-accent-color;
+	-fx-alignment:center;
+}

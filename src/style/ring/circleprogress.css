@@ -1,7 +1,11 @@
+*{
+	fx-background:#EEEEEE;
+	fx-accent-color:#f9690e;
+}
 .circleindicator-container  {	
 
 	-fx-padding: 5.0;
-	-fx-background-color: -fx-background;
+	-fx-background-color: #EEEEEE;
 }
 .circleindicator-container > .circleindicator-label {
 	-fx-font-weight: bold; 
