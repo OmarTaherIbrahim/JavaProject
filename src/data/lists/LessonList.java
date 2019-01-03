@@ -6,11 +6,13 @@ import utils.ListSqlManager;
 
 public class LessonList {
 	protected String [] list=new String[100];
-	protected String loc="/res/alphabets/";
-	protected final String extention =".png";
-	public LessonList(String tableName,String location) {
+	protected String imgloc="/res/alphabets/";
+	protected String audioloc="/res/audio/alphabets/";
+	protected final String extension =".png",audioExtention=".mp3";
+	public LessonList(String tableName,String location,String AudioLocation){
 			ListSqlManager listSqlManger = new ListSqlManager();
-			loc=location;
+			imgloc=location;
+			audioloc = AudioLocation;
 			try {
 				list=listSqlManger.getArray(tableName, "Item");
 				System.out.println(list[0]);
@@ -25,12 +27,15 @@ public class LessonList {
 	
 	
 	public String getImageUrl(int index) {
-		return loc+list[index]+extention;
+		return imgloc+list[index]+extension;
 	}
 	public String getWord(int index) {
 		return list[index];
 	}
 	public int getSize() {
 		return list.length;
+	}
+	public String getAudioPath(int index) {
+		return audioloc+list[index]+audioExtention;
 	}
 }

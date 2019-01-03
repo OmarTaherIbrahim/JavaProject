@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="95.0" prefWidth="602.0" style="-fx-alignment: center;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="95.0" prefWidth="602.0" style="-fx-alignment: center;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.ItemController">
    <children>
       <ImageView fx:id="image" fitHeight="97.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -19,7 +19,7 @@
             <Font size="41.0" />
          </font>
       </Label>
-      <JFXButton fx:id="button" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" prefHeight="105.0" prefWidth="130.0" ripplerFill="#f9690e" textFill="WHITE">
+      <JFXButton fx:id="button" buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" onAction="#playAudio" prefHeight="105.0" prefWidth="130.0" ripplerFill="#f9690e" textFill="WHITE">
          <font>
             <Font size="28.0" />
          </font>

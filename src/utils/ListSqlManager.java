@@ -31,7 +31,7 @@ public class ListSqlManager {
 		int i=0;
 		while(result.next()&&i<size) {
 			ary[i]=result.getString(column);
-			System.out.println(ary[i]);
+			//System.out.println(ary[i]);
 			i++;
 		}
 		

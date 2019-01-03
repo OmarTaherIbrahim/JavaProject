@@ -6,7 +6,7 @@ import utils.ListSqlManager;
 public class AlphabetsList extends LessonList {
 
 	public AlphabetsList() {
-		super("Alphabets", "/res/alphabets/");
+		super("Alphabets", "/res/alphabets/","src/res/audio/alphabets/");
 		// TODO Auto-generated constructor stub
 		
 	}

@@ -17,6 +17,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import ui.controller.ItemController;
 
 public class Items {
 	HBox hbox[];
@@ -31,7 +32,10 @@ public class Items {
 		hbox = new HBox[ls.getSize()];
 		for(int i=0;i<lessonList.getSize();i++) {
 			try {
-				hbox[i] = FXMLLoader.load(getClass().getResource("../../ui/FXML/Item.fxml"));
+				FXMLLoader fxmlLoader = new FXMLLoader( getClass().getResource("../../ui/FXML/Item.fxml") );
+				hbox[i] =fxmlLoader.load();
+				ItemController itemController = fxmlLoader.<ItemController>getController();
+				itemController.setItem(ls.getAudioPath(i));
 				img =(ImageView) hbox[i].lookup("#image");
 				img .setImage(new Image(ls.getImageUrl(i)));
 				btn=(JFXButton) hbox[i].lookup("#button");
@@ -47,6 +51,8 @@ public class Items {
 				});
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}catch (Exception e) {
 				e.printStackTrace();
 			}
 		}
