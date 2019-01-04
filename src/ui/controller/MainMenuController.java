@@ -36,7 +36,6 @@ public class MainMenuController implements Initializable{
 			e.printStackTrace();
 		}
 		
-		SelectionMenuController smc = fxmlLoader.<SelectionMenuController>getController();
 		Scene profileSceen = new Scene(p);
 		stage.setScene(profileSceen);
 		stage.show();
