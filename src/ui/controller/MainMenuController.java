@@ -29,15 +29,14 @@ public class MainMenuController implements Initializable{
     	FXMLLoader fxmlLoader=null;
     	Parent p=null;
 		try {
-			fxmlLoader =new FXMLLoader(getClass().getResource("../FXML/Learn.fxml"));
+			fxmlLoader =new FXMLLoader(getClass().getResource("../FXML/SelectionMenu.fxml"));
 			p = fxmlLoader.load();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		LearnController lc = fxmlLoader.<LearnController>getController();
-		lc.SetList(new AlphabetsList());
+		SelectionMenuController smc = fxmlLoader.<SelectionMenuController>getController();
 		Scene profileSceen = new Scene(p);
 		stage.setScene(profileSceen);
 		stage.show();
