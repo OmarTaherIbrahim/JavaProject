@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<JFXTabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="450.0" minWidth="800.0" prefHeight="520.0" prefWidth="250.0" side="LEFT" stylesheets="@../../style/tabs.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.WordTestController">
+   <tabs>
+      <Tab fx:id="backtab" disable="true" onSelectionChanged="#gobackTab">
+         <graphic>
+            <JFXButton minHeight="50.0" minWidth="50.0" onAction="#goback" prefHeight="200.0" prefWidth="200.0" text="Back">
+               <graphic>
+                  <ImageView fitHeight="43.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../res/circled-left-2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </graphic>
+      </Tab>
+      <Tab text="multiplication test">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="90.0" layoutY="90.0" prefHeight="60.0" prefWidth="146.0" text="1">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="304.0" layoutY="90.0" prefHeight="60.0" prefWidth="146.0" text="10">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="207.0" layoutY="65.0" prefHeight="110.0" prefWidth="136.0" text="X">
+                     <font>
+                        <Font size="51.0" />
+                     </font>
+                  </Label>
+                  <JFXButton contentDisplay="TEXT_ONLY" layoutX="113.0" layoutY="220.0" prefHeight="93.0" prefWidth="114.0" text="1">
+                     <graphic>
+                        <ImageView fitHeight="103.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton contentDisplay="TEXT_ONLY" layoutX="304.0" layoutY="220.0" prefHeight="93.0" prefWidth="114.0" text="5">
+                     <graphic>
+                        <ImageView fitHeight="103.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton contentDisplay="TEXT_ONLY" layoutX="113.0" layoutY="331.0" prefHeight="93.0" prefWidth="114.0" text="10">
+                     <graphic>
+                        <ImageView fitHeight="103.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton contentDisplay="TEXT_ONLY" layoutX="304.0" layoutY="331.0" prefHeight="93.0" prefWidth="114.0" text="7">
+                     <graphic>
+                        <ImageView fitHeight="103.0" fitWidth="107.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+   </tabs>
+</JFXTabPane>
