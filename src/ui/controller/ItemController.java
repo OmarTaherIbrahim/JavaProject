@@ -25,6 +25,7 @@ public class ItemController {
     private String audioUrl="src/res/audio/alphabets/0.mp3";
     @FXML
     void playAudio(ActionEvent event) {
+    	System.out.println(audioUrl);
     	
     	Media audio = new Media(new File(audioUrl).toURI().toString());
 		MediaPlayer mediaPlayer = new MediaPlayer(audio);

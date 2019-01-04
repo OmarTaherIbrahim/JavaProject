@@ -25,7 +25,7 @@ public class Test implements Initializable {
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		try {
-		ColorsList listabc=new ColorsList();
+		AlphabetsList listabc=new AlphabetsList();
 		Items items=new Items(listabc);
 		listview.setItems(listob);
 		listob.addAll(items.get());
