@@ -71,7 +71,7 @@ public class ImageTestController implements Initializable {
     		while(flag) {
 				for(int j=0;j<i;j++) {
 					if(randomNumbers[i]==randomNumbers[j]) {
-						randomNumbers[i]=randomNumbers[]
+//						randomNumbers[i]=randomNumbers[]
 						flag=true;
 						break;
 					}else {
