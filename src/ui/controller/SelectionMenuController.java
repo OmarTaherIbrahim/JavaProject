@@ -10,6 +10,7 @@ import com.sun.accessibility.internal.resources.accessibility;
 import data.lists.AlphabetsList;
 import data.lists.ColorsList;
 import data.lists.Items;
+import data.lists.ListAdapter;
 import data.lists.ShapesList;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -58,19 +59,15 @@ public class SelectionMenuController implements Initializable {
 			multiplication.setItems(multiply);
 			
 			AlphabetsList listabc=new AlphabetsList();
-			Items abcitems=new Items(listabc);
-			alphabet.setItems(abclistob);
-			abclistob.addAll(abcitems.get());
-			
+			ListAdapter alphabetlistadapter = new ListAdapter(alphabet, abclistob, listabc);
+			alphabetlistadapter.start();
 			ShapesList shapeslist=new ShapesList();
-			Items shapesitems=new Items(shapeslist);
-			shapes.setItems(slistob);
-			slistob.addAll(shapesitems.get());
+			ListAdapter shapeslistadapter = new ListAdapter(shapes, slistob, shapeslist);
+			shapeslistadapter.start();
 			
 			ColorsList listc=new ColorsList();
-			Items coloritems=new Items(listc);
-			colors.setItems(clistob);
-			clistob.addAll(coloritems.get());
+			ListAdapter colorlistadapter = new ListAdapter(colors, clistob, listc);
+			colorlistadapter.start();
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
