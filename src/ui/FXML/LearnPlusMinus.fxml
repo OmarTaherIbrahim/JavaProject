@@ -1,27 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.191" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.LearnPlusMinusController">
-   <children>
-      <JFXButton fx:id="Field1" layoutX="170.0" layoutY="101.0" onAction="#DelNumbers" />
-      <JFXButton fx:id="Field2" layoutX="334.0" layoutY="101.0" onAction="#DelNumbers" />
-      <Label fx:id="Symbol" layoutX="257.0" layoutY="105.0" text="Label" />
-      <Label fx:id="Result" alignment="CENTER" layoutX="209.0" layoutY="60.0" prefHeight="25.0" prefWidth="125.0" text="0" textAlignment="RIGHT" />
-      <JFXButton fx:id="BTN9" layoutX="360.0" layoutY="282.0" onAction="#AddNumber" prefHeight="35.0" prefWidth="52.0" text="9" />
-      <JFXButton fx:id="BTN8" layoutX="253.0" layoutY="282.0" onAction="#AddNumber" prefHeight="35.0" prefWidth="44.0" text="8" />
-      <JFXButton fx:id="BTN7" layoutX="148.0" layoutY="282.0" onAction="#AddNumber" prefHeight="35.0" prefWidth="44.0" text="7" />
-      <JFXButton fx:id="BTN6" layoutX="360.0" layoutY="222.0" onAction="#AddNumber" prefHeight="35.0" prefWidth="52.0" text="6" />
-      <JFXButton fx:id="BTN5" layoutX="253.0" layoutY="222.0" onAction="#AddNumber" prefHeight="35.0" prefWidth="44.0" text="5" />
-      <JFXButton fx:id="BTN4" layoutX="148.0" layoutY="222.0" onAction="#AddNumber" prefHeight="35.0" prefWidth="44.0" text="4" />
-      <JFXButton fx:id="BTN1" layoutX="148.0" layoutY="164.0" onAction="#AddNumber" prefHeight="35.0" prefWidth="44.0" text="1" />
-      <JFXButton fx:id="BTN2" layoutX="253.0" layoutY="164.0" onAction="#AddNumber" prefHeight="35.0" prefWidth="44.0" text="2" />
-      <JFXButton fx:id="BTN3" layoutX="360.0" layoutY="164.0" onAction="#AddNumber" prefHeight="35.0" prefWidth="52.0" text="3" />
-      <JFXButton fx:id="DelBTN" layoutX="360.0" layoutY="325.0" prefHeight="35.0" prefWidth="52.0" text="Del" />
-      <JFXButton fx:id="BTN0" layoutX="249.0" layoutY="325.0" onAction="#AddNumber" prefHeight="35.0" prefWidth="52.0" text="0" />
-      <JFXButton fx:id="CalBTN" layoutX="144.0" layoutY="325.0" onAction="#Calculate" prefHeight="35.0" prefWidth="52.0" text="Cal" />
-      <JFXButton fx:id="BackBTN" layoutX="55.0" layoutY="35.0" text="Back" />
-   </children>
-</AnchorPane>
+<JFXTabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="450.0" minWidth="800.0" prefHeight="520.0" prefWidth="800.0" side="LEFT" stylesheets="@../../style/tabs.css" xmlns="http://javafx.com/javafx/8.0.191" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.LearnPlusMinusController">
+   <tabs>
+      <Tab fx:id="backtab" disable="true" onSelectionChanged="#gobackTab">
+         <graphic>
+            <JFXButton minHeight="200.0" minWidth="100.0" onAction="#goback" prefHeight="200.0" prefWidth="200.0" text="Back">
+               <graphic>
+                  <ImageView fitHeight="43.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../res/circled-left-2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </graphic>
+      </Tab>
+      <Tab style="visibility: false;">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane prefHeight="520.0" prefWidth="550.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <JFXButton fx:id="CalBTN" layoutX="371.0" layoutY="381.0" onAction="#Calculate" prefHeight="35.0" prefWidth="52.0" text="Cal" />
+                        <JFXButton fx:id="Field1" layoutX="152.0" layoutY="99.0" onAction="#DelNumbers" />
+                        <JFXButton fx:id="Field2" layoutX="305.0" layoutY="99.0" onAction="#DelNumbers" />
+                        <Label fx:id="Symbol" layoutX="245.0" layoutY="103.0" text="Label" />
+                        <Label fx:id="Result" alignment="CENTER" layoutX="197.0" layoutY="52.0" prefHeight="25.0" prefWidth="125.0" text="0" textAlignment="RIGHT" />
+                        <JFXButton fx:id="BTN9" layoutX="371.0" layoutY="287.0" onAction="#AddNumber" prefHeight="35.0" prefWidth="52.0" text="9" />
+                        <JFXButton fx:id="BTN8" layoutX="237.0" layoutY="287.0" onAction="#AddNumber" prefHeight="35.0" prefWidth="44.0" text="8" />
+                        <JFXButton fx:id="BTN7" layoutX="94.0" layoutY="287.0" onAction="#AddNumber" prefHeight="35.0" prefWidth="44.0" text="7" />
+                        <JFXButton fx:id="BTN6" layoutX="371.0" layoutY="204.0" onAction="#AddNumber" prefHeight="35.0" prefWidth="52.0" text="6" />
+                        <JFXButton fx:id="BTN5" layoutX="237.0" layoutY="204.0" onAction="#AddNumber" prefHeight="35.0" prefWidth="44.0" text="5" />
+                        <JFXButton fx:id="BTN4" layoutX="94.0" layoutY="204.0" onAction="#AddNumber" prefHeight="35.0" prefWidth="44.0" text="4" />
+                        <JFXButton fx:id="BTN1" layoutX="94.0" layoutY="140.0" onAction="#AddNumber" prefHeight="35.0" prefWidth="44.0" text="1" />
+                        <JFXButton fx:id="BTN2" layoutX="237.0" layoutY="140.0" onAction="#AddNumber" prefHeight="35.0" prefWidth="44.0" text="2" />
+                        <JFXButton fx:id="BTN3" layoutX="371.0" layoutY="140.0" onAction="#AddNumber" prefHeight="35.0" prefWidth="52.0" text="3" />
+                        <JFXButton fx:id="DelBTN" layoutX="90.0" layoutY="381.0" onAction="#DelAllNumbers" prefHeight="35.0" prefWidth="52.0" text="Del" />
+                        <JFXButton fx:id="BTN0" layoutX="233.0" layoutY="381.0" onAction="#AddNumber" prefHeight="35.0" prefWidth="52.0" text="0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+   </tabs>
+</JFXTabPane>
