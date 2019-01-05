@@ -55,46 +55,9 @@ public class TestMenuController implements Initializable {
     	goback(event);
     }
     
-    @FXML
-    void imageTest(ActionEvent event) {
-    	Parent p;
-		try {
-			FXMLLoader L = new FXMLLoader(getClass().getResource("../FXML/ImageTest.fxml"));
-			p=L.load();
-			ImageTestController controller=L.<ImageTestController>getController();
-			controller.setLessonList(new AlphabetsList());
-			Scene profileSceen = new Scene(p);	
-			Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-			stage.setScene(profileSceen);
-			stage.show();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    	
+ 
 
-    }
-
-    @FXML
-    void wordTest(ActionEvent event) {
-    	
-     	Parent p;
-    		try {
-    			FXMLLoader L = new FXMLLoader(getClass().getResource("../FXML/WordTest.fxml"));
-    			p=L.load();
-    			WordTestController controller=L.<WordTestController>getController();
-    			controller.
-    			Scene profileSceen = new Scene(p);	
-    			Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-    			stage.setScene(profileSceen);
-    			stage.show();
-    		} catch (IOException e) {
-    			// TODO Auto-generated catch block
-    			e.printStackTrace();
-    		}
-
-	}
-	
+  
     @FXML
     void imageTest(ActionEvent event) {
     	
