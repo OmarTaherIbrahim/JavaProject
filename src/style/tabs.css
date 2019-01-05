@@ -1,9 +1,16 @@
 .tab *.tab-label {
-	-fx-padding: 0em 0em 0em 0em;
     -fx-rotate: 90;
+      -fx-min-width:200; 
+      -fx-max-width: 200;
+       -fx-alignment:center;
+           -fx-pref-height: 75;
+           -fx-max-height:  75;
+       
 }
-
 .tab {
     -fx-padding: 3em 0.5em 3em 0.5em;
     -fx-pref-height: 250;
+    -fx-pref-width: 72;
+    -fx-alignment:center;
 }
+

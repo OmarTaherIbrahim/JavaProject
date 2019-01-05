@@ -21,10 +21,10 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <JFXButton fx:id="answer1" onAction="#answerChosen" />
-            <JFXButton fx:id="answer4" onAction="#answerChosen" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <JFXButton fx:id="answer1" onAction ="#answerChosen" />
+            <JFXButton fx:id="answer4" onAction ="#answerChosen" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <JFXButton fx:id="answer2" onAction="#answerChosen" GridPane.columnIndex="1" />
-            <JFXButton fx:id="answer3" onAction="#answerChosen" GridPane.rowIndex="1" />
+            <JFXButton fx:id="answer3" onAction ="#answerChosen" GridPane.rowIndex="1" />
          </children>
       </GridPane>
       <JFXButton fx:id="audioBTN" layoutX="275.0" layoutY="235.0" />

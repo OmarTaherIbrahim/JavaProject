@@ -1,5 +1,6 @@
 package ui.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -7,8 +8,13 @@ import com.jfoenix.controls.JFXButton;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
 public class LearnPlusMinusController implements Initializable {
 
@@ -70,23 +76,35 @@ public class LearnPlusMinusController implements Initializable {
 		Symbol.setText(symbol);
 		this.digit = digit;
 		
+		
 	}
     
     @Override
 	public void initialize(URL location, ResourceBundle resources) {
-		Symbol.setText("+");
-		digit = 2;
 	
     }
 	
     @FXML
-    void AddNumber(ActionEvent event) {
+    void AddNumber(ActionEvent event ) {
+    	String x,y;
     	String NumberChosen=((JFXButton)event.getSource()).getText();
+    	if(Field1.getText().length() == digit-1 && Field2.getText().length() == digit -1 && Symbol.getText() == "+") {
+    		
+    	}
     	if(Field1.getText().length() <= digit-1)
     		Field1.setText(Field1.getText() + NumberChosen);
     	else if(Field2.getText().length() <= digit-1)
     		Field2.setText(Field2.getText() + NumberChosen);
-
+    	x=Field1.getText();
+    	y=Field2.getText();
+    	if(Field1.getText().equals(""))x="0";
+    	if(Field2.getText().equals(""))y="0";
+    	if(Symbol.getText().equals("+"))
+    	Result.setText((Integer.parseInt(x)+Integer.parseInt(y) )+"");
+    	else {
+    		Result.setText((Integer.parseInt(x)-Integer.parseInt(y) )+"");
+    	}
+    	
     }
     
     @FXML
@@ -107,6 +125,34 @@ public class LearnPlusMinusController implements Initializable {
     @FXML
     void DelNumbers(ActionEvent event) {
     	((JFXButton)event.getSource()).setText("");
+
+    }
+    
+    @FXML
+    void DelAllNumbers(ActionEvent event) {
+    	Field1.setText("");
+    	Field2.setText("");
+
+    }
+    
+    @FXML
+    void goback(ActionEvent event) {
+    	Parent p;
+		try {
+			p = FXMLLoader.load(getClass().getResource("../FXML/SelectionMenu.fxml"));
+		
+			Scene profileSceen = new Scene(p);	
+			Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+			stage.setScene(profileSceen);
+			stage.show();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+    }
+    @FXML
+    void gobackTab(ActionEvent event) {
 
     }
 
