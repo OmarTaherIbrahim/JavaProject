@@ -4,6 +4,7 @@ package application;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import utils.server.ServerManager;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
@@ -14,8 +15,9 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			stage = primaryStage;
-
-			Parent root = FXMLLoader.load(getClass().getResource("../ui/FXML/LoginForm.fxml"));
+			ServerManager severManager = new ServerManager();
+			severManager.sendString();
+			Parent root = FXMLLoader.load(getClass().getResource("../ui/FXML/Learn.fxml"));
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("");
