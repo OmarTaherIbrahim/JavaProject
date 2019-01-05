@@ -80,7 +80,6 @@ public class ImageTestController implements Initializable {
 		imageview.setImage(image);
 		generateAnswers();
 		fillButtons();
-    	
     }
     private void generateAnswers() {
     	answers.clear();
@@ -104,7 +103,7 @@ public class ImageTestController implements Initializable {
     	answer2.setText(lessonlist.getWord(answers.get(1)));
     	answer3.setText(lessonlist.getWord(answers.get(2)));
     	answer4.setText(lessonlist.getWord(answers.get(3)));
-    	
+    
     }
     @FXML
     void answerChosen(ActionEvent event) {
