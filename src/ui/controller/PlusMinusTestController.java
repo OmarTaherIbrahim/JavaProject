@@ -174,6 +174,7 @@ public class PlusMinusTestController implements Initializable {
     			// TODO Auto-generated catch block
     			e.printStackTrace();
     		}
+    }
 
     @FXML
     void goback(ActionEvent event) {
