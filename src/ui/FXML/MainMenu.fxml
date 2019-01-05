@@ -21,7 +21,7 @@
                      <graphic>
                         <ImageView fitHeight="137.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../Resources/planets-09.png" />
+                              <Image url="@../../res/planets-09.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -44,7 +44,7 @@
                      <graphic>
                         <ImageView fitHeight="132.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../Resources/Icon/play.png" />
+                              <Image url="@../../res/icon/play.png" />
                            </image>
                         </ImageView>
                      </graphic>
