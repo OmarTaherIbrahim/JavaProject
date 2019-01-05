@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<JFXTabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="450.0" minWidth="800.0" prefHeight="520.0" prefWidth="800.0" side="LEFT" stylesheets="@../../style/tabs.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.TestMenuController">
+<JFXTabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="450.0" minWidth="800.0" prefHeight="520.0" prefWidth="800.0" side="LEFT" stylesheets="@../../style/tabs.css" xmlns="http://javafx.com/javafx/8.0.191" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.TestMenuController">
    <tabs>
       <Tab fx:id="backtab" disable="true" onSelectionChanged="#gobackTab">
          <graphic>
@@ -35,7 +35,7 @@
                         <Image url="@../../res/abc_icon.png" />
                      </image>
                   </ImageView>
-                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="295.0" layoutY="312.0" prefHeight="123.0" prefWidth="132.0" style="-fx-background-radius: 25%;">
+                  <JFXButton fx:id="wordBTN" contentDisplay="GRAPHIC_ONLY" layoutX="295.0" layoutY="312.0" onAction="#wordTest" prefHeight="123.0" prefWidth="132.0" style="-fx-background-radius: 25%;">
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -44,7 +44,7 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="68.0" layoutY="312.0" prefHeight="123.0" prefWidth="132.0" style="-fx-background-radius: 25%;" text="Button">
+                  <JFXButton fx:id="imageBTN" contentDisplay="GRAPHIC_ONLY" layoutX="68.0" layoutY="312.0" onAction="#imageTest" prefHeight="123.0" prefWidth="132.0" style="-fx-background-radius: 25%;" text="Button">
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
