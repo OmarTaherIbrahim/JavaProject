@@ -1,16 +1,18 @@
 .tab *.tab-label {
+	  -fx-min-width:80; 
+	     -fx-pref-width: 120;
+   	-fx-margin:0;
+      -fx-alignment:center;
+    -fx-pref-height: 75;
+    -fx-max-height:  75;
     -fx-rotate: 90;
-      -fx-min-width:200; 
-      -fx-max-width: 200;
-       -fx-alignment:center;
-           -fx-pref-height: 75;
-           -fx-max-height:  75;
+   
        
 }
 .tab {
-    -fx-padding: 3em 0.5em 3em 0.5em;
-    -fx-pref-height: 250;
-    -fx-pref-width: 72;
-    -fx-alignment:center;
+    -fx-padding: 0em 0.5m 3em 0.5em;
+    -fx-pref-height: 300;
+    -fx-pref-width: 75;
+     -fx-alignment:center ;
 }
 

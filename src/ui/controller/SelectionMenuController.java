@@ -2,15 +2,12 @@ package ui.controller;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Observable;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXListView;
-import com.sun.accessibility.internal.resources.accessibility;
 
 import data.lists.AlphabetsList;
 import data.lists.ColorsList;
-import data.lists.Items;
 import data.lists.LessonList;
 import data.lists.ListAdapter;
 import data.lists.ShapesList;
@@ -25,7 +22,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ListView;
 import javafx.scene.control.Tab;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
@@ -87,7 +83,44 @@ public class SelectionMenuController implements Initializable {
 			@Override
 			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
 				// TODO Auto-generated method stub
-				sendToNextScreen2(Integer.parseInt(newValue.charAt(6)+""));
+				String extra = ((newValue.length()>7) ? newValue.charAt(7)+"" :"");
+				sendToNextScreen2(Integer.parseInt((newValue.charAt(6)+ extra).trim()));
+			}
+			
+		
+			
+		});
+		alphabet.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<HBox>() {
+
+
+			@Override
+			public void changed(ObservableValue<? extends HBox> observable, HBox oldValue, HBox newValue) {
+				// TODO Auto-generated method stub
+				sendToNextScreen3(new AlphabetsList(), alphabet.getSelectionModel().getSelectedIndex());
+			}
+			
+		
+			
+		});
+		colors.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<HBox>() {
+
+
+			@Override
+			public void changed(ObservableValue<? extends HBox> observable, HBox oldValue, HBox newValue) {
+				// TODO Auto-generated method stub
+				sendToNextScreen3(new ColorsList(), colors.getSelectionModel().getSelectedIndex());
+			}
+			
+		
+			
+		});
+		shapes.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<HBox>() {
+
+
+			@Override
+			public void changed(ObservableValue<? extends HBox> observable, HBox oldValue, HBox newValue) {
+				// TODO Auto-generated method stub
+				sendToNextScreen3(new ShapesList(), shapes.getSelectionModel().getSelectedIndex());
 			}
 			
 		
@@ -103,7 +136,9 @@ public class SelectionMenuController implements Initializable {
 			}
 		
 		
+
 		});
+
 		
 		
 	}
@@ -148,7 +183,7 @@ public class SelectionMenuController implements Initializable {
 			p=L.load();
 			LearnController controller=L.<LearnController>getController();
 			controller.SetList(lessonlist);
-			controller.setUI(index);
+			controller.setIndex(index);
 			Scene profileSceen = new Scene(p);	
 			Stage stage = (Stage)addition.getScene().getWindow();
 			stage.setScene(profileSceen);
