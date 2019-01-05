@@ -8,12 +8,12 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<JFXTabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="450.0" minWidth="800.0" prefHeight="520.0" prefWidth="800.0" side="LEFT" stylesheets="@../../style/tabs.css" xmlns="http://javafx.com/javafx/8.0.191" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.SelectionMenuController">
+<JFXTabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="640.0" minWidth="920.0" prefHeight="520.0" prefWidth="800.0" side="LEFT" stylesheets="@../../style/tabs.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.SelectionMenuController">
    
    <tabs>
-      <Tab fx:id="backtab1" disable="true" onSelectionChanged="#gobackTab">
+      <Tab fx:id="backtab1" closable="false" disable="true" onSelectionChanged="#gobackTab">
          <graphic>
-            <JFXButton maxHeight="50.0" minHeight="50.0" minWidth="100.0" onAction="#goback" prefHeight="50.0" prefWidth="200.0" text="Back">
+            <JFXButton maxHeight="50.0" minHeight="50.0" minWidth="150.0" onAction="#goback" prefHeight="50.0" prefWidth="306.0" text="Back" textFill="WHITE">
                <graphic>
                   <ImageView fitHeight="43.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -24,13 +24,16 @@
             </JFXButton>
          </graphic>
       </Tab>
-      <Tab text="Alphabet">
+      <Tab style="-fx-alignment: center_left;" text="Alphabet">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
                   <JFXListView fx:id="alphabet" prefHeight="520.0" prefWidth="550.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children></AnchorPane>
         </content>
+         <graphic>
+            <JFXButton text="Alphabets" textFill="WHITE" />
+         </graphic>
       </Tab>
       <Tab text="Colors">
         <content>
@@ -39,14 +42,20 @@
                   <JFXListView fx:id="colors" prefHeight="520.0" prefWidth="550.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children></AnchorPane>
         </content>
+         <graphic>
+            <JFXButton text="Colors" textFill="WHITE" />
+         </graphic>
       </Tab>
       <Tab text="Shapes">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <JFXListView fx:id="shapes" prefHeight="520.0" prefWidth="550.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <JFXListView fx:id="shapes" layoutX="3.0" prefHeight="640.0" prefWidth="670.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children></AnchorPane>
         </content>
+         <graphic>
+            <JFXButton text="Shapes" textFill="WHITE" />
+         </graphic>
       </Tab>
       <Tab text="Addition">
         <content>
@@ -56,6 +65,9 @@
                </children>
             </AnchorPane>
         </content>
+         <graphic>
+            <JFXButton text="Addition" textFill="WHITE" />
+         </graphic>
       </Tab>
       <Tab text="Subtraction">
         <content>
@@ -65,6 +77,9 @@
                </children>
             </AnchorPane>
         </content>
+         <graphic>
+            <JFXButton text="Subtraction" textFill="WHITE" />
+         </graphic>
       </Tab>
       <Tab text="Multiplication">
         <content>
@@ -74,6 +89,9 @@
                </children>
             </AnchorPane>
         </content>
+         <graphic>
+            <JFXButton text="Multiplication" textFill="WHITE" />
+         </graphic>
       </Tab>
    </tabs>
 </JFXTabPane>

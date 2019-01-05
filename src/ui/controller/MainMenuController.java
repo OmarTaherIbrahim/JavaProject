@@ -60,7 +60,17 @@ public class MainMenuController implements Initializable{
 
     @FXML
     void playBtnClicked(ActionEvent event) {
-    	
+    	stage= (Stage)( ((Node)event.getSource()).getScene().getWindow());
+    	Parent p=null;
+		try {
+			p = FXMLLoader.load(getClass().getResource("../FXML/TestSelectionMenu.fxml"));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		Scene profileSceen = new Scene(p);
+		stage.setScene(profileSceen);
+		stage.show();
     }
 
     @FXML
