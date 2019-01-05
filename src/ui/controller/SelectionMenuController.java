@@ -126,8 +126,11 @@ public class SelectionMenuController implements Initializable {
 		
 			
 		});
+	
 		
-//			sendToNextScreen3(new AlphabetsList(), alphabet.getSelectionModel().getSelectedIndex());
+		
+
+
 		
 		
 	}

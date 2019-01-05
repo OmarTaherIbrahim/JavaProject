@@ -1,3 +1,4 @@
+
 package ui.controller;
 
 import java.io.IOException;
@@ -48,7 +49,7 @@ public class MultiTestController implements Initializable {
     
     private void genrateoneto10() {
     	oneto10=new ArrayList<Integer>(10);
-    	for(int i=0; i<=9; i++) 
+    	for(int i=0; i<=10; i++) 
     		oneto10.add(i+1);
     	Collections.shuffle(oneto10);
     }
@@ -96,20 +97,8 @@ public class MultiTestController implements Initializable {
     	}
     	
     	index++;
-    	if(index>10) {
-    		Parent p;
-    		try {
-    			p = FXMLLoader.load(getClass().getResource("../FXML/Result.fxml"));
-    		
-    			Scene profileSceen = new Scene(p);	
-    			Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-    			stage.setScene(profileSceen);
-    			stage.show();
-    		} catch (IOException e) {
-    			// TODO Auto-generated catch block
-    			e.printStackTrace();
-    		}
-
+    	if(index==10) {
+    		goToResultScreen();
     	}
     	
     	lblscore.setText(result + "");
@@ -118,6 +107,24 @@ public class MultiTestController implements Initializable {
     	fillButtons();
     	
     }
+    
+    private void goToResultScreen() {
+      	Parent p;
+    		try {
+    			FXMLLoader L = new FXMLLoader(getClass().getResource("../FXML/ResultScreen.fxml"));
+    			p=L.load();
+    			ResultScreenController controller=L.<ResultScreenController>getController();
+    			controller.setScore(result);
+    			Scene profileSceen = new Scene(p);	
+    			Stage stage = (Stage)lbl2.getScene().getWindow();
+    			stage.setScene(profileSceen);
+    			stage.show();
+    		} catch (IOException e) {
+    			// TODO Auto-generated catch block
+    			e.printStackTrace();
+    		}
+        	
+        }
 
     @FXML
     void goback(ActionEvent event) {

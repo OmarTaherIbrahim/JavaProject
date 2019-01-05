@@ -129,7 +129,7 @@ public class ImageTestController implements Initializable {
     			FXMLLoader L = new FXMLLoader(getClass().getResource("../FXML/ResultScreen.fxml"));
     			p=L.load();
     			ResultScreenController controller=L.<ResultScreenController>getController();
-    			controller.setScore2(result, lessonlist, "../FXML/ImageTest.fxml");
+    			controller.setScore(result);
     			Scene profileSceen = new Scene(p);	
     			Stage stage = (Stage)num_of_questions.getScene().getWindow();
     			stage.setScene(profileSceen);
@@ -137,9 +137,10 @@ public class ImageTestController implements Initializable {
     		} catch (IOException e) {
     			// TODO Auto-generated catch block
     			e.printStackTrace();
+    		}
         	
-        }
     }
+	
     @FXML
     void goback(ActionEvent event) {
 	   Parent p;
@@ -155,6 +156,7 @@ public class ImageTestController implements Initializable {
 			e.printStackTrace();
 		}
     }
+
 
     @FXML
     void gobackTab(ActionEvent event) {
