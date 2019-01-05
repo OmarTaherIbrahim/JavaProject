@@ -37,17 +37,17 @@
             </AnchorPane>
          </content>
          <graphic>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+            <AnchorPane maxHeight="50.0" minHeight="50.0" prefHeight="50.0" prefWidth="200.0">
                <children>
-                  <Label fx:id="num_of_questions" layoutY="76.0" text="Label" textFill="WHITE">
+                  <Label fx:id="num_of_questions" layoutY="6.0" text="Label" textFill="WHITE">
                      <font>
                         <Font size="26.0" />
                      </font></Label>
-                  <Label layoutX="121.0" layoutY="75.0" text="10" textFill="WHITE">
+                  <Label layoutX="116.0" layoutY="5.0" text="10" textFill="WHITE">
                      <font>
                         <Font size="27.0" />
                      </font></Label>
-                  <Label layoutX="83.0" layoutY="74.0" prefHeight="30.0" prefWidth="21.0" text="/">
+                  <Label layoutX="79.0" prefHeight="30.0" prefWidth="21.0" text="/">
                      <font>
                         <Font size="34.0" />
                      </font></Label>
