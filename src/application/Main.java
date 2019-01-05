@@ -16,7 +16,7 @@ public class Main extends Application {
 			stage = primaryStage;
 
 
-			Parent root = FXMLLoader.load(getClass().getResource("../ui/FXML/LoginForm.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("../ui/FXML/multiTest.fxml"));
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("");

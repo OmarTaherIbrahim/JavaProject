@@ -1,6 +1,7 @@
 package ui.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import com.jfoenix.controls.JFXButton;
 
@@ -69,5 +70,4 @@ public class WordTestController {
     	goback(event);
     }
     
-
 }
