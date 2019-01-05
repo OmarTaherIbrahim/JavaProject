@@ -59,7 +59,7 @@ public class ImageTestController implements Initializable {
     @Override
 	public void initialize(URL location, ResourceBundle resources) {
 		randomNumbers= new ArrayList<Integer>();
-    	setLessonList(lessonlist);
+    	lessonlist = new ColorsList();
     	answers=new ArrayList<Integer>() ;
     	num_of_questions.setText(result + "");
     	fillRandomNumbers();
@@ -122,13 +122,14 @@ public class ImageTestController implements Initializable {
     	generateAnswers();
     	fillButtons();
     }
+    
     private void goToResultScreen() {
       	Parent p;
     		try {
     			FXMLLoader L = new FXMLLoader(getClass().getResource("../FXML/ResultScreen.fxml"));
     			p=L.load();
     			ResultScreenController controller=L.<ResultScreenController>getController();
-    			controller.setScore2(result, lessonlist, "../FXML/ImageTest.fxml");
+    			controller.setScore(result);
     			Scene profileSceen = new Scene(p);	
     			Stage stage = (Stage)num_of_questions.getScene().getWindow();
     			stage.setScene(profileSceen);
@@ -136,8 +137,10 @@ public class ImageTestController implements Initializable {
     		} catch (IOException e) {
     			// TODO Auto-generated catch block
     			e.printStackTrace();
+    		}
         	
         }
+  
 
 }
     

@@ -26,11 +26,6 @@ public class TestMenuController implements Initializable {
 	    private JFXButton imageBTN;
 
 	
-	  @FXML
-	    private JFXButton wordBTN;
-
-	    @FXML
-	    private JFXButton imageBTN;
 	@FXML
     private Tab backtab;
 	
