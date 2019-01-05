@@ -64,6 +64,7 @@ public class MultiTestController implements Initializable {
     	}
     	Collections.shuffle(newlist);
     	for(int i = 0; i<9; i++) {
+    		
     		answers.add(newlist.get(i)*lvl);
     	}
     }
@@ -111,6 +112,7 @@ public class MultiTestController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		answers = new ArrayList<Integer>();
+		setlvl(1);
 		oneto10();
 		generatequestion(index); 
 	}
