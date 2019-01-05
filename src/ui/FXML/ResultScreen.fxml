@@ -7,12 +7,13 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<JFXTabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="450.0" minWidth="800.0" prefHeight="520.0" prefWidth="800.0" side="LEFT" stylesheets="@../../style/tabs.css" xmlns="http://javafx.com/javafx/8.0.191" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.ResultScreenController">
+<JFXTabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="450.0" minWidth="800.0" prefHeight="520.0" prefWidth="800.0" side="LEFT" stylesheets="@../../style/tabs.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.ResultScreenController">
    <tabs>
       <Tab fx:id="backtab" disable="true" onSelectionChanged="#gobackTab">
          <graphic>
-            <JFXButton fx:id="BackBTN" minHeight="200.0" minWidth="100.0" onAction="#goBack" prefHeight="200.0" prefWidth="200.0" text="Back">
+            <JFXButton fx:id="BackBTN" minHeight="75.0" minWidth="300.0" onAction="#goBack" prefHeight="75.0" prefWidth="200.0" text="Back">
                <graphic>
                   <ImageView fitHeight="43.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -25,24 +26,11 @@
       </Tab>
       <Tab fx:id="backtomainTab" disable="true" onSelectionChanged="#gobacktoMainTab">
          <graphic>
-            <JFXButton fx:id="MainBTN" minHeight="200.0" minWidth="100.0" onAction="#gotoMain" prefHeight="200.0" prefWidth="200.0" text="Main Menu">
+            <JFXButton fx:id="MainBTN" minHeight="75.0" minWidth="300.0" onAction="#gotoMain" prefHeight="75.0" prefWidth="228.0" text="Main Menu">
                <graphic>
                   <ImageView fitHeight="43.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../res/Home-512.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
-            </JFXButton>
-         </graphic>
-      </Tab>
-      <Tab fx:id="tryTab" disable="true" onSelectionChanged="#tryAgainTab">
-         <graphic>
-            <JFXButton fx:id="TryBTN" minHeight="200.0" minWidth="100.0" onAction="#TryAgain" prefHeight="200.0" prefWidth="200.0" text="Try Again">
-               <graphic>
-                  <ImageView fitHeight="43.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../res/img_471012.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -55,8 +43,24 @@
                <children>
                   <AnchorPane prefHeight="520.0" prefWidth="550.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Label fx:id="name" layoutX="261.0" layoutY="148.0" text="Label" />
-                        <Label fx:id="score" layoutX="261.0" layoutY="243.0" text="Label" />
+                        <Label fx:id="name" layoutX="139.0" layoutY="85.0" text="username">
+                           <font>
+                              <Font size="48.0" />
+                           </font></Label>
+                        <Label fx:id="score" alignment="CENTER" layoutX="250.0" layoutY="235.0" prefHeight="51.0" prefWidth="171.0" text="Label">
+                           <font>
+                              <Font size="41.0" />
+                           </font></Label>
+                        <Label fx:id="score1" layoutX="125.0" layoutY="235.0" text="Score:">
+                           <font>
+                              <Font size="41.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="name1" layoutX="107.0" layoutY="14.0" text="username:">
+                           <font>
+                              <Font size="58.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
                </children>
