@@ -5,6 +5,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.jfoenix.controls.JFXButton;
+
+import data.lists.AlphabetsList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +18,12 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class TestMenuController implements Initializable {
+	 @FXML
+	    private JFXButton wordBTN;
+
+	    @FXML
+	    private JFXButton imageBTN;
+
 	
 	
 	@Override
@@ -43,4 +52,45 @@ public class TestMenuController implements Initializable {
 		System.out.println("tabbed");
     }
 
+    @FXML
+    void imageTest(ActionEvent event) {
+    	
+    	Parent p;
+		try {
+			FXMLLoader L = new FXMLLoader(getClass().getResource("../FXML/ImageTest.fxml"));
+			p=L.load();
+			ImageTestController controller=L.<ImageTestController>getController();
+			controller.setLessonList(new AlphabetsList());
+			Scene profileSceen = new Scene(p);	
+			Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+			stage.setScene(profileSceen);
+			stage.show();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+    }
+
+    @FXML
+    void wordTest(ActionEvent event) {
+       	Parent p;
+    		try {
+    			FXMLLoader L = new FXMLLoader(getClass().getResource("../FXML/WordTest.fxml"));
+    			p=L.load();
+    			ImageTestController controller=L.<ImageTestController>getController();
+    			controller.setLessonList(new AlphabetsList());
+    			Scene profileSceen = new Scene(p);	
+    			Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+    			stage.setScene(profileSceen);
+    			stage.show();
+    		} catch (IOException e) {
+    			// TODO Auto-generated catch block
+    			e.printStackTrace();
+    		}
+
+
+    }
+
 }
+
