@@ -101,7 +101,10 @@ public class LearnController implements Initializable,EventHandler<KeyEvent> {
 	public void SetList(LessonList ll) {
 		lessonList=ll;
 	}
-
+	public void setIndex(int index) {
+		indx=index;
+		setUI(indx);
+	}
 	
 	public void handle(KeyEvent event) {
 		// TODO Auto-generated method stub

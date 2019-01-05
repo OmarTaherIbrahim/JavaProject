@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<JFXTabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="450.0" minWidth="800.0" prefHeight="520.0" prefWidth="800.0" side="LEFT" stylesheets="@../../style/tabs.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.TestMenuController">
+<JFXTabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="630.0" minWidth="920.0" prefHeight="520.0" prefWidth="800.0" side="LEFT" stylesheets="@../../style/tabs.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.TestMenuController">
    <tabs>
       <Tab fx:id="backtab" disable="true" onSelectionChanged="#gobackTab">
          <graphic>
@@ -55,6 +55,9 @@
                   </JFXButton>
                </children></AnchorPane>
         </content>
+         <graphic>
+            <JFXButton text="Alphabets" textFill="WHITE" />
+         </graphic>
       </Tab>
       <Tab text="Colors">
         <content>
@@ -85,6 +88,9 @@
                   </ImageView>
                </children></AnchorPane>
         </content>
+         <graphic>
+            <JFXButton text="Colors" textFill="WHITE" />
+         </graphic>
       </Tab>
       <Tab text="Shapes">
         <content>
@@ -115,6 +121,9 @@
                   </ImageView>
                </children></AnchorPane>
         </content>
+         <graphic>
+            <JFXButton text="Shapes" textFill="WHITE" />
+         </graphic>
       </Tab>
       <Tab text="Addition">
         <content>
@@ -130,6 +139,9 @@
                </children>
             </AnchorPane>
         </content>
+         <graphic>
+            <JFXButton text="Addition" textFill="WHITE" />
+         </graphic>
       </Tab>
       <Tab text="Subtraction">
         <content>
@@ -145,6 +157,9 @@
                </children>
             </AnchorPane>
         </content>
+         <graphic>
+            <JFXButton text="Subtraction" textFill="WHITE" />
+         </graphic>
       </Tab>
       <Tab text="Multiplication">
         <content>
@@ -173,10 +188,13 @@
                         <JFXButton layoutX="10.0" layoutY="10.0" prefHeight="159.0" prefWidth="153.0" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                      </children>
                   </GridPane>
-                  <JFXButton layoutX="148.0" layoutY="388.0" prefHeight="80.0" prefWidth="255.0" text="Level 10" />
+                  <JFXButton layoutX="148.0" layoutY="388.0" prefHeight="80.0" prefWidth="255.0" text="10" />
                </children>
             </AnchorPane>
         </content>
+         <graphic>
+            <JFXButton text="Multiplication" textFill="WHITE" />
+         </graphic>
       </Tab>
    </tabs>
 </JFXTabPane>
