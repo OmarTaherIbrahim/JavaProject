@@ -1,36 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.191" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.ImageTestController">
-   <children>
-      <ImageView fx:id="imageview" fitHeight="150.0" fitWidth="200.0" layoutX="201.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true" />
-      <GridPane layoutX="192.0" layoutY="286.0" prefHeight="60.0" prefWidth="217.0" AnchorPane.bottomAnchor="54.0">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="125.33331298828125" minWidth="10.0" prefWidth="100.6666259765625" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="104.0" minWidth="10.0" prefWidth="99.3333740234375" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <JFXButton fx:id="answer1" onAction="#answerChosen" />
-            <JFXButton fx:id="answer4" onAction="#answerChosen" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <JFXButton fx:id="answer2" onAction="#answerChosen" GridPane.columnIndex="1" />
-            <JFXButton fx:id="answer3" onAction="#answerChosen" GridPane.rowIndex="1" />
-         </children>
-      </GridPane>
-      <JFXButton fx:id="audioBTN" layoutX="275.0" layoutY="235.0" />
-      <JFXButton fx:id="backBTN" layoutX="66.0" layoutY="37.0" text="&lt;- Back" />
-      <Label fx:id="num_of_questions" layoutX="247.0" layoutY="41.0" text="Label" />
-      <Label layoutX="278.0" layoutY="50.0" rotate="18.1" text="/" />
-      <Label layoutX="287.0" layoutY="59.0" text="10" />
-   </children>
-</AnchorPane>
+<JFXTabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="640.0" minWidth="920.0" prefHeight="520.0" prefWidth="800.0" side="LEFT" stylesheets="@../../style/tabs.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.ImageTestController">
+   <tabs>
+      <Tab fx:id="backtab1" closable="false" disable="true" onSelectionChanged="#gobackTab">
+         <graphic>
+            <JFXButton maxHeight="50.0" minHeight="50.0" minWidth="150.0" onAction="#goback" prefHeight="50.0" prefWidth="306.0" text="Back" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="43.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../res/circled-left-2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </graphic>
+      </Tab>
+      <Tab text="Alphabet">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <ImageView fx:id="imageview" fitHeight="268.0" fitWidth="379.0" layoutX="121.0" pickOnBounds="true" preserveRatio="true" />
+                  <JFXButton fx:id="answer2" layoutX="300.0" layoutY="466.0" onAction="#answerChosen" prefHeight="122.0" prefWidth="220.0" style="-fx-background-color: black;" />
+                  <JFXButton fx:id="answer4" layoutX="34.0" layoutY="466.0" onAction="#answerChosen" prefHeight="122.0" prefWidth="220.0" style="-fx-background-color: black;" text="Button" />
+                  <JFXButton fx:id="answer3" layoutX="300.0" layoutY="283.0" onAction="#answerChosen" prefHeight="122.0" prefWidth="219.0" style="-fx-background-color: black;" text="Button" />
+                  <JFXButton fx:id="answer1" layoutX="34.0" layoutY="283.0" onAction="#answerChosen" prefHeight="122.0" prefWidth="220.0" style="-fx-background-color: black;" text="Button" />
+               </children>
+            </AnchorPane>
+         </content>
+         <graphic>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="num_of_questions" layoutY="76.0" text="Label" textFill="WHITE">
+                     <font>
+                        <Font size="26.0" />
+                     </font></Label>
+                  <Label layoutX="121.0" layoutY="75.0" text="10" textFill="WHITE">
+                     <font>
+                        <Font size="27.0" />
+                     </font></Label>
+                  <Label layoutX="83.0" layoutY="74.0" prefHeight="30.0" prefWidth="21.0" text="/">
+                     <font>
+                        <Font size="34.0" />
+                     </font></Label>
+               </children>
+            </AnchorPane>
+         </graphic>
+      </Tab>
+   </tabs>
+</JFXTabPane>
