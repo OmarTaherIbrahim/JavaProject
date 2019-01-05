@@ -6,8 +6,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import data.lists.AlphabetsList;
 import com.jfoenix.controls.JFXButton;
-
 import data.lists.LessonList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -75,7 +75,7 @@ public class LearnController implements Initializable,EventHandler<KeyEvent> {
     @FXML
     void playAudio(ActionEvent event) {
     	
-    	Media audio = new Media(new File("src/res/audio/alphabets/"+indx+".mp3").toURI().toString());
+    	Media audio = new Media(new File(lessonList.getAudioPath(indx)).toURI().toString());
 		MediaPlayer mediaPlayer = new MediaPlayer(audio);
 	    mediaPlayer.play();
 	    mediaPlayer.setVolume(0.5);
@@ -95,7 +95,7 @@ public class LearnController implements Initializable,EventHandler<KeyEvent> {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
-		
+		lessonList=new AlphabetsList();
 	}
 
 	public void SetList(LessonList ll) {

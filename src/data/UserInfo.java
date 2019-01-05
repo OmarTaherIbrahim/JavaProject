@@ -16,7 +16,7 @@ public class UserInfo {
 	public static int GetColorsXPCap() {
 		return getXPCap(ColorsLevel);
 	}
-	public static int GetShapes() {
+	public static int GetShapesXPCap() {
 		return getXPCap(ShapesLevel);
 	}
 	

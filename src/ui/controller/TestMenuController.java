@@ -15,6 +15,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Tab;
 import javafx.stage.Stage;
 
 public class TestMenuController implements Initializable {
@@ -25,6 +26,8 @@ public class TestMenuController implements Initializable {
 	    private JFXButton imageBTN;
 
 	
+	@FXML
+    private Tab backtab;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -49,7 +52,7 @@ public class TestMenuController implements Initializable {
     @FXML
     void gobackTab(ActionEvent event) {
     	event.consume();
-		System.out.println("tabbed");
+    	goback(event);
     }
 
     @FXML
