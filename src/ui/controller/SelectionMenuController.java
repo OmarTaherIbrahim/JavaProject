@@ -68,8 +68,8 @@ public class SelectionMenuController implements Initializable {
 			ColorsList listc=new ColorsList();
 			ListAdapter colorlistadapter = new ListAdapter(colors, clistob, listc);
 			colorlistadapter.start();
-			}catch(Exception e) {
-				e.printStackTrace();
-			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
