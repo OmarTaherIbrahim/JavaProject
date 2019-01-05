@@ -1,18 +1,25 @@
 package ui.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.ResourceBundle;
 import com.jfoenix.controls.JFXButton;
 import data.lists.AlphabetsList;
+import data.lists.ColorsList;
 import data.lists.LessonList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 public class ImageTestController implements Initializable {
 
@@ -52,8 +59,8 @@ public class ImageTestController implements Initializable {
     @Override
 	public void initialize(URL location, ResourceBundle resources) {
 		randomNumbers= new ArrayList<Integer>();
-    	lessonlist = new AlphabetsList();
-    	answers=new ArrayList<Integer>();
+    	lessonlist = new ColorsList();
+    	answers=new ArrayList<Integer>() ;
     	num_of_questions.setText(result + "");
     	fillRandomNumbers();
     	setQuestion(currIndex);
@@ -106,8 +113,8 @@ public class ImageTestController implements Initializable {
     	}
     	
     	currIndex++;
-    	if(currIndex>10) {
-    		
+    	if(currIndex>=10) {
+    		goToResultScreen();
     	}
     	num_of_questions.setText(currIndex+1 + "");
     	num_of_questions.setText(result + "");
@@ -116,6 +123,22 @@ public class ImageTestController implements Initializable {
     	fillButtons();
     }
     private void goToResultScreen() {
-    	
-    }
+      	Parent p;
+    		try {
+    			FXMLLoader L = new FXMLLoader(getClass().getResource("../FXML/ResultScreen.fxml"));
+    			p=L.load();
+    			ResultScreenController controller=L.<ResultScreenController>getController();
+    			controller.setScore2(result, lessonlist, "../FXML/ImageTest.fxml");
+    			Scene profileSceen = new Scene(p);	
+    			Stage stage = (Stage)num_of_questions.getScene().getWindow();
+    			stage.setScene(profileSceen);
+    			stage.show();
+    		} catch (IOException e) {
+    			// TODO Auto-generated catch block
+    			e.printStackTrace();
+        	
+        }
+
+}
+    
 }

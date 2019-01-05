@@ -13,5 +13,7 @@ public class AlphabetsList extends LessonList {
 	public String getAlphabet(int index) {
 		return list[index].charAt(0)+"";
 	}
-	
+	public String getAudioPath(int index) {
+		return audioloc+index+audioExtention;
+	}
 }
