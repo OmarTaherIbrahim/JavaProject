@@ -101,7 +101,7 @@ public class TestMenuController implements Initializable {
     	goback(event);
     }
     
-    @FXML
+
     void imageTestABC(ActionEvent event) {
     	
     	Parent p;
@@ -123,6 +123,7 @@ public class TestMenuController implements Initializable {
 
     @FXML
     void imageTestColor(ActionEvent event) {
+
     	
     	Parent p;
 		try {
