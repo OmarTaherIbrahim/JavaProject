@@ -49,7 +49,7 @@ public class MultiTestController implements Initializable {
     
     private void genrateoneto10() {
     	oneto10=new ArrayList<Integer>(10);
-    	for(int i=0; i<=10; i++) 
+    	for(int i=0; i<=9; i++) 
     		oneto10.add(i+1);
     	Collections.shuffle(oneto10);
     }
@@ -95,12 +95,10 @@ public class MultiTestController implements Initializable {
     	if(answerChosen.equals(lvl*oneto10.get(index) + "") ) {
     		result++;
     	}
-    	
     	index++;
     	if(index==10) {
     		goToResultScreen();
     	}
-    	
     	lblscore.setText(result + "");
     	generatequestion(index);
     	generateAnswers();

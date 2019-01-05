@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<JFXTabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="640.0" minWidth="920.0" prefHeight="520.0" prefWidth="250.0" side="LEFT" stylesheets="@../../style/tabs.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.MultiTestController">
+<JFXTabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="640.0" minWidth="920.0" prefHeight="520.0" prefWidth="250.0" side="LEFT" stylesheets="@../../style/tabs.css" xmlns="http://javafx.com/javafx/8.0.191" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.MultiTestController">
    <tabs>
       <Tab fx:id="backtab" disable="true" onSelectionChanged="#gobackTab">
          <graphic>
@@ -47,7 +47,7 @@
                         <Font size="56.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblscore" alignment="CENTER" layoutX="283.0" layoutY="60.0" prefHeight="36.0" prefWidth="26.0" text="1" />
+                  <Label fx:id="lblscore" alignment="CENTER" layoutX="283.0" layoutY="60.0" prefHeight="36.0" prefWidth="26.0" text="0" />
                   <Label alignment="CENTER" layoutX="307.0" layoutY="66.0" prefHeight="23.0" prefWidth="13.0" text="/" />
                   <Label layoutX="324.0" layoutY="69.0" text="10" />
                </children>
