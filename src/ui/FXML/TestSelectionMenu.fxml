@@ -35,7 +35,7 @@
                         <Image url="@../../res/abc_icon.png" />
                      </image>
                   </ImageView>
-                  <JFXButton fx:id="imageTest1" contentDisplay="GRAPHIC_ONLY" layoutX="192.0" layoutY="315.0" onAction="#imageTestABC" prefHeight="123.0" prefWidth="132.0" style="-fx-background-radius: 25%;" text="Button">
+                  <JFXButton fx:id="imageTest1" contentDisplay="GRAPHIC_ONLY" layoutX="192.0" layoutY="315.0" onAction ="#imageTestABC" prefHeight="123.0" prefWidth="132.0" style="-fx-background-radius: 25%;" text="Button">
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
