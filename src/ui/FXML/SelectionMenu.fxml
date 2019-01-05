@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXListView?>
 <?import com.jfoenix.controls.JFXTabPane?>
 <?import javafx.scene.control.Tab?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <JFXTabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="450.0" minWidth="800.0" prefHeight="520.0" prefWidth="800.0" side="LEFT" stylesheets="@../../style/tabs.css" xmlns="http://javafx.com/javafx/8.0.191" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.SelectionMenuController">
+   
    <tabs>
+      <Tab fx:id="backtab1" disable="true" onSelectionChanged="#gobackTab">
+         <graphic>
+            <JFXButton maxHeight="50.0" minHeight="50.0" minWidth="100.0" onAction="#goback" prefHeight="50.0" prefWidth="200.0" text="Back">
+               <graphic>
+                  <ImageView fitHeight="43.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../res/circled-left-2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </graphic>
+      </Tab>
       <Tab text="Alphabet">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
