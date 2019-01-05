@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
 <?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
 <?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -12,54 +14,80 @@
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="530.0" maxWidth="800.0" minHeight="530.0" minWidth="800.0" prefHeight="530.0" prefWidth="800.0" style="-fx-background-color: #EEEEEE;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.LearnController">
-   <children>
-      <VBox layoutX="225.0" prefHeight="530.0" prefWidth="351.0" style="-fx-alignment: center;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="224.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <Label fx:id="letterTxt" prefHeight="64.0" prefWidth="203.0" style="-fx-alignment: center;" text="A" textAlignment="CENTER" textFill="#f9690e">
-               <font>
-                  <Font size="84.0" />
-               </font>
-            </Label>
-            <ImageView fx:id="image" fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../res/alphabets/Apple.png" />
-               </image>
-               <viewport>
-                  <Rectangle2D />
-               </viewport>
-            </ImageView>
-            <Label fx:id="nameTxt" prefHeight="82.0" prefWidth="306.0" style="-fx-alignment: center;" text="Apple" textAlignment="CENTER" textFill="#f9690e">
-               <font>
-                  <Font size="46.0" />
-               </font>
-            </Label>
-            <JFXButton id="audioButton" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" onAction="#playAudio" prefHeight="64.0" prefWidth="203.0" style="-fx-background-image: url('@../Resources/Icon/audio.png');" stylesheets="@style/play.css">
-               <effect>
-                  <Bloom />
-               </effect>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
+<JFXTabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="520.0" minWidth="800.0" prefHeight="560.0" prefWidth="800.0" side="LEFT" stylesheets="@../../style/tabs.css" xmlns="http://javafx.com/javafx/8.0.191" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.LearnPlusMinusController">
+   <tabs>
+      <Tab fx:id="backtab" disable="true" onSelectionChanged="#gobackTab">
+         <graphic>
+            <JFXButton minHeight="200.0" minWidth="100.0" onAction="#goback" prefHeight="200.0" prefWidth="200.0" text="Back">
                <graphic>
-                  <ImageView fitHeight="50.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="43.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../res/icon/audio.png" />
+                        <Image url="@../../res/circled-left-2.png" />
                      </image>
                   </ImageView>
                </graphic>
             </JFXButton>
-            <MediaView fx:id="mediaView" fitHeight="25.0" fitWidth="100.0" />
-         </children>
-      </VBox>
-      <JFXButton focusTraversable="false" layoutX="731.0" layoutY="1.0" onAction="#btnGoRight" prefHeight="530.0" prefWidth="69.0" ripplerFill="#e1e1e1" text="&gt;" textFill="#f9690e" AnchorPane.bottomAnchor="-1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
-         <font>
-            <Font name="Verdana Bold" size="31.0" />
-         </font></JFXButton>
-      <JFXButton focusTraversable="false" layoutY="1.0" onAction="#btnGoLeft" prefHeight="530.0" prefWidth="69.0" ripplerFill="#e1e1e1" text="&lt;" textFill="#f9690e" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="1.0">
-         <font>
-            <Font name="Verdana Bold" size="31.0" />
-         </font>
-      </JFXButton>
-   </children>
-</AnchorPane>
+         </graphic>
+      </Tab>
+      <Tab>
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane prefHeight="550.0" prefWidth="550.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <VBox layoutX="89.0" prefHeight="530.0" prefWidth="351.0" style="-fx-alignment: center;">
+                           <children>
+                              <Label fx:id="letterTxt" prefHeight="64.0" prefWidth="203.0" style="-fx-alignment: center;" text="A" textAlignment="CENTER" textFill="#f9690e">
+                                 <font>
+                                    <Font size="84.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fx:id="image" fitHeight="300.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../res/alphabets/Apple.png" />
+                                 </image>
+                                 <viewport>
+                                    <Rectangle2D />
+                                 </viewport>
+                              </ImageView>
+                              <Label fx:id="nameTxt" prefHeight="82.0" prefWidth="306.0" style="-fx-alignment: center;" text="Apple" textAlignment="CENTER" textFill="#f9690e">
+                                 <font>
+                                    <Font size="46.0" />
+                                 </font>
+                              </Label>
+                              <JFXButton id="audioButton" contentDisplay="GRAPHIC_ONLY" focusTraversable="false" onAction="#playAudio" prefHeight="64.0" prefWidth="203.0" style="-fx-background-image: url('@../Resources/Icon/audio.png');" stylesheets="@style/play.css">
+                                 <effect>
+                                    <Bloom />
+                                 </effect>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <graphic>
+                                    <ImageView fitHeight="50.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../res/icon/audio.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </JFXButton>
+                              <MediaView fx:id="mediaView" fitHeight="25.0" fitWidth="100.0" />
+                           </children>
+                        </VBox>
+                        <JFXButton focusTraversable="false" layoutX="481.0" layoutY="-5.0" onAction="#btnGoRight" prefHeight="530.0" prefWidth="69.0" ripplerFill="#e1e1e1" text="&gt;" textFill="#f9690e">
+                           <font>
+                              <Font name="Verdana Bold" size="31.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton focusTraversable="false" layoutY="-5.0" onAction="#btnGoLeft" prefHeight="530.0" prefWidth="69.0" ripplerFill="#e1e1e1" text="&lt;" textFill="#f9690e">
+                           <font>
+                              <Font name="Verdana Bold" size="31.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+   </tabs>
+</JFXTabPane>

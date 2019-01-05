@@ -1,11 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane minHeight="650.0" minWidth="920.0" prefHeight="650.0" prefWidth="920.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
-   <children>
-      <ImageView fitHeight="46.0" fitWidth="292.0" layoutX="338.0" layoutY="226.0" pickOnBounds="true" preserveRatio="true" />
-   </children>
-</AnchorPane>
+<JFXTabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="450.0" minWidth="800.0" prefHeight="520.0" prefWidth="800.0" side="LEFT" stylesheets="@../../style/tabs.css" xmlns="http://javafx.com/javafx/8.0.191" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.ResultScreenController">
+   <tabs>
+      <Tab fx:id="backtab" disable="true" onSelectionChanged="#gobackTab">
+         <graphic>
+            <JFXButton fx:id="BackBTN" minHeight="200.0" minWidth="100.0" onAction="#goBack" prefHeight="200.0" prefWidth="200.0" text="Back">
+               <graphic>
+                  <ImageView fitHeight="43.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../res/circled-left-2.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </graphic>
+      </Tab>
+      <Tab fx:id="backtomainTab" disable="true" onSelectionChanged="#gobacktoMainTab">
+         <graphic>
+            <JFXButton fx:id="MainBTN" minHeight="200.0" minWidth="100.0" onAction="#gotoMain" prefHeight="200.0" prefWidth="200.0" text="Main Menu">
+               <graphic>
+                  <ImageView fitHeight="43.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../res/Home-512.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </graphic>
+      </Tab>
+      <Tab fx:id="tryTab" disable="true" onSelectionChanged="#tryAgainTab">
+         <graphic>
+            <JFXButton fx:id="TryBTN" minHeight="200.0" minWidth="100.0" onAction="#TryAgain" prefHeight="200.0" prefWidth="200.0" text="Try Again">
+               <graphic>
+                  <ImageView fitHeight="43.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../res/img_471012.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </graphic>
+      </Tab>
+      <Tab>
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane prefHeight="520.0" prefWidth="550.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label fx:id="name" layoutX="261.0" layoutY="148.0" text="Label" />
+                        <Label fx:id="score" layoutX="261.0" layoutY="243.0" text="Label" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+   </tabs>
+</JFXTabPane>

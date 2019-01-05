@@ -11,6 +11,7 @@ import com.sun.accessibility.internal.resources.accessibility;
 import data.lists.AlphabetsList;
 import data.lists.ColorsList;
 import data.lists.Items;
+import data.lists.LessonList;
 import data.lists.ListAdapter;
 import data.lists.ShapesList;
 import javafx.beans.value.ChangeListener;
@@ -93,6 +94,8 @@ public class SelectionMenuController implements Initializable {
 			
 		});
 		
+			sendToNextScreen3(new AlphabetsList(), alphabet.getSelectionModel().getSelectedIndex());
+		
 		
 	}
 	private void sendToNextScreen(String symbol,int digit) {
@@ -127,8 +130,26 @@ public class SelectionMenuController implements Initializable {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-	}
+		}
+	
+	private void sendToNextScreen3(LessonList lessonlist, int index) {
+		Parent p;
+		try {
+			FXMLLoader L = new FXMLLoader(getClass().getResource("../FXML/Learn.fxml"));
+			p=L.load();
+			LearnController controller=L.<LearnController>getController();
+			controller.SetList(lessonlist);
+			controller.setUI(index);
+			Scene profileSceen = new Scene(p);	
+			Stage stage = (Stage)addition.getScene().getWindow();
+			stage.setScene(profileSceen);
+			stage.show();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		}
+	
 	private void extracted() {
 		try {
 			addition.setItems(digits);
