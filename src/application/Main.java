@@ -14,7 +14,9 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			stage = primaryStage;
-			Parent root = FXMLLoader.load(getClass().getResource("../ui/FXML/ImageTest.fxml"));
+
+
+			Parent root = FXMLLoader.load(getClass().getResource("../ui/FXML/LearnPlusMinus.fxml"));
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("");
