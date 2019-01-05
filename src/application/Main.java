@@ -16,7 +16,7 @@ public class Main extends Application {
 		try {
 			stage = primaryStage;
 
-			Parent root = FXMLLoader.load(getClass().getResource("../ui/FXML/ImageTest.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("../ui/FXML/MainMenu.fxml"));
 
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);

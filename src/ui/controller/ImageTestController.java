@@ -58,16 +58,16 @@ public class ImageTestController implements Initializable {
     
     @Override
 	public void initialize(URL location, ResourceBundle resources) {
-		randomNumbers= new ArrayList<Integer>();
-    	lessonlist = new AlphabetsList();
-    	answers=new ArrayList<Integer>() ;
-    	num_of_questions.setText(0 + "");
-    	fillRandomNumbers();
-    	setQuestion(currIndex);
+		
 	}
     
     public void setLessonList(LessonList lessonlist) {
     	this.lessonlist = lessonlist; 
+    	randomNumbers= new ArrayList<Integer>();
+    	answers=new ArrayList<Integer>() ;
+    	num_of_questions.setText(0 + "");
+    	fillRandomNumbers();
+    	setQuestion(currIndex);
     }
     private void fillRandomNumbers() {
     	for(int i=0;i<lessonlist.getSize();i++) {
