@@ -15,7 +15,6 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			stage = primaryStage;
-			severManager.sendString();
 			Parent root = FXMLLoader.load(getClass().getResource("../ui/FXML/Learn.fxml"));
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
