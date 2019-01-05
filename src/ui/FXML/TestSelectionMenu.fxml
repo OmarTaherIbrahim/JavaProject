@@ -44,7 +44,7 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="68.0" layoutY="312.0" prefHeight="123.0" prefWidth="132.0" style="-fx-background-radius: 25%;" text="Button">
+                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="68.0" layoutY="312.0" onAction="#abcImageBtn" prefHeight="123.0" prefWidth="132.0" style="-fx-background-radius: 25%;" text="Button">
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -63,7 +63,7 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="79.0" layoutY="315.0" prefHeight="123.0" prefWidth="132.0" style="-fx-background-radius: 25%;" text="Button">
+                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="79.0" layoutY="315.0" onAction="#colorImageBtn" prefHeight="123.0" prefWidth="132.0" style="-fx-background-radius: 25%;" text="Button">
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -105,7 +105,7 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="100.0" layoutY="325.0" prefHeight="123.0" prefWidth="132.0" style="-fx-background-radius: 25%;" text="Button">
+                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="100.0" layoutY="325.0" onAction="#shapesImageBtn" prefHeight="123.0" prefWidth="132.0" style="-fx-background-radius: 25%;" text="Button">
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
