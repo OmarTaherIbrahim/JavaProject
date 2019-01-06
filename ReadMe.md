@@ -1,5 +1,10 @@
 
 # Educational Game JavaFX
+## Made By
+### Omar Taher
+### Samer Al-Omari
+### Ward Hindawi
+
 ## Vision
 The project should be able to test kids in colors, shapes, Alphabets, Multiplication, Addition, Subtraction.
 Also it should provide a Library so that the kids could learn, each of the topics should have a level so the kid could track process
@@ -51,6 +56,6 @@ will have a test System for every topic  it will be buttons for each topic
     + the current level in this topic and a [bar](https://github.com/torakiki/fx-progress-circle) for xp
 
 
-[Colors palatte](https://flatuicolors.com/palette/au)
+[Colors palatte](http://bootflat.github.io/color-picker.html)
 
-
++ [ui.ring](https://github.com/OmarTaherIbrahim/JavaProject/tree/master/src/ui/ring) containts code [Taken from](https://github.com/torakiki/fx-progress-circle) with a slight edit to suite our usage.
