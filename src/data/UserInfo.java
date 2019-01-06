@@ -1,6 +1,5 @@
 package data;
 
-import utils.LevelManager;
 import utils.LoginManager;
 
 public class UserInfo {

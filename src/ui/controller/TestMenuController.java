@@ -1,7 +1,6 @@
 
 package ui.controller;
 
-import java.awt.Event;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;

@@ -6,8 +6,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.ResourceBundle;
 import com.jfoenix.controls.JFXButton;
-import data.lists.AlphabetsList;
-import data.lists.ColorsList;
 import data.lists.LessonList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -54,7 +52,7 @@ public class ImageTestController implements Initializable {
     
     private LessonList lessonlist;
     private ArrayList<Integer> answers; 
-    private int question[];
+
     
     @Override
 	public void initialize(URL location, ResourceBundle resources) {
@@ -131,7 +129,7 @@ public class ImageTestController implements Initializable {
     			FXMLLoader L = new FXMLLoader(getClass().getResource("../FXML/ResultScreen.fxml"));
     			p=L.load();
     			ResultScreenController controller=L.<ResultScreenController>getController();
-    			controller.setScore(result,lessonlist.getType());
+    			controller.setScore(result,LessonList.getType());
     			Scene profileSceen = new Scene(p);	
     			Stage stage = (Stage)num_of_questions.getScene().getWindow();
     			stage.setScene(profileSceen);
@@ -147,7 +145,7 @@ public class ImageTestController implements Initializable {
     void goback(ActionEvent event) {
 	   Parent p;
 		try {
-			p = FXMLLoader.load(getClass().getResource("../FXML/MainMenu.fxml"));
+			p = FXMLLoader.load(getClass().getResource("../FXML/SelectionMenu.fxml"));
 		
 			Scene profileSceen = new Scene(p);	
 			Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();

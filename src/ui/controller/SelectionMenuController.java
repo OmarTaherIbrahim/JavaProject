@@ -191,7 +191,7 @@ public class SelectionMenuController implements Initializable {
 			addition.setItems(digits);
 			subtraction.setItems(digits);
 			multiplication.setItems(multiply);
-			
+			//MultiThreadin
 			AlphabetsList listabc=new AlphabetsList();
 			ListAdapter alphabetlistadapter = new ListAdapter(alphabet, abclistob, listabc);
 			alphabetlistadapter.start();

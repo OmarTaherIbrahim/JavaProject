@@ -9,9 +9,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 
-import application.Main;
 import data.UserInfo;
-import data.lists.Items;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -22,8 +20,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-import utils.LevelManager;
-import utils.ListSqlManager;
 import utils.LoginManager;
 
 public class LoginController implements Initializable {
@@ -97,9 +93,7 @@ public class LoginController implements Initializable {
 					UserInfo.UserName = usrTxt.getText();
 					UserInfo.Password = pswrdTxt.getText();
 					Thread.sleep(800);
-
-					LoginManager lm=new LoginManager();
-					lm.UpdateAll();
+					LoginManager.UpdateAll();
 					System.out.println("asdfasdfa:"+UserInfo.AdditionLevel);
 					Parent p = FXMLLoader.load(getClass().getResource("../FXML/MainMenu.fxml"));
 					Scene profileSceen = new Scene(p);

@@ -8,10 +8,6 @@ import java.util.ResourceBundle;
 import com.jfoenix.controls.JFXButton;
 
 import data.UserInfo;
-import data.lists.AlphabetsList;
-import data.lists.ColorsList;
-import data.lists.LessonList;
-import data.lists.ShapesList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,6 +25,7 @@ import utils.ProgressThread;
 
 public class ResultScreenController implements Initializable {
 	
+	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
 		name.setText(UserInfo.UserName);

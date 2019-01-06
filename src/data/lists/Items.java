@@ -1,6 +1,5 @@
 package data.lists;
 
-import java.io.File;
 import java.io.IOException;
 
 import javafx.fxml.FXMLLoader;
@@ -9,8 +8,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 
 public class Items {
 	HBox hbox[];

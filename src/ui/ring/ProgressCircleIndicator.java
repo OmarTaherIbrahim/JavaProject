@@ -127,7 +127,8 @@ abstract class ProgressCircleIndicator extends Control {
                 return n.innerCircleRadiusProperty() == null || !n.innerCircleRadiusProperty().isBound();
             }
 
-            @Override
+            @SuppressWarnings("unchecked")
+			@Override
             public StyleableProperty<Number> getStyleableProperty(ProgressCircleIndicator n) {
                 return (StyleableProperty<Number>) n.innerCircleRadiusProperty();
             }

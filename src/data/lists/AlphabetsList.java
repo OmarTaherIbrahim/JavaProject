@@ -1,8 +1,5 @@
 package data.lists;
 
-import java.sql.SQLException;
-import utils.ListSqlManager;
-
 public class AlphabetsList extends LessonList {
 
 	public AlphabetsList() {

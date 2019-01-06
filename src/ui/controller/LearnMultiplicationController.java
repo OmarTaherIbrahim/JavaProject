@@ -2,10 +2,7 @@ package ui.controller;
 
 import java.io.IOException;
 import java.net.URL;
-import java.security.PrivilegedActionException;
 import java.util.ResourceBundle;
-
-import org.omg.CORBA.PRIVATE_MEMBER;
 
 import com.jfoenix.controls.JFXListView;
 
