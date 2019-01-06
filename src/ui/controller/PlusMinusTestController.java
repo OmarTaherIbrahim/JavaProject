@@ -133,7 +133,7 @@ public class PlusMinusTestController implements Initializable {
 		    	sum = Integer.parseInt(lbl1.getText()) + Integer.parseInt(lbl2.getText());
 		    	answers.add(sum);
 		    	ArrayList<Integer> newlist = new ArrayList<Integer>();
-		    	for(int i = 0; i<=randomnumbers.size(); i++) {
+		    	for(int i = 0; i< randomnumbers.size(); i++) {
 		    		if(i == index) {
 		    			continue;
 		    		}
@@ -148,7 +148,7 @@ public class PlusMinusTestController implements Initializable {
 	    		sum = Integer.parseInt(lbl1.getText()) - Integer.parseInt(lbl2.getText());
 		    	answers.add(sum);
 		    	ArrayList<Integer> newlist = new ArrayList<Integer>();
-		    	for(int i = 0; i<=randomnumbers.size(); i++) {
+		    	for(int i = 0; i<randomnumbers.size(); i++) {
 		    		if(i == index) {
 		    			continue;
 		    		}
