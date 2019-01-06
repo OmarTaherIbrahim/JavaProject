@@ -126,18 +126,10 @@ public class SelectionMenuController implements Initializable {
 		
 			
 		});
-		alphabet.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-
-			@Override
-			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-				// TODO Auto-generated method stub
-				
-				
-			}
+	
 		
 		
 
-		});
 
 		
 		
