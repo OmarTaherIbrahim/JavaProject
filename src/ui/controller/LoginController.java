@@ -101,7 +101,7 @@ public class LoginController implements Initializable {
 					LoginManager lm=new LoginManager();
 					lm.UpdateAll();
 					System.out.println("asdfasdfa:"+UserInfo.AdditionLevel);
-					Parent p = FXMLLoader.load(getClass().getResource("../FXML/MainMenufxml"));
+					Parent p = FXMLLoader.load(getClass().getResource("../FXML/MainMenu.fxml"));
 					Scene profileSceen = new Scene(p);
 					
 					Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();

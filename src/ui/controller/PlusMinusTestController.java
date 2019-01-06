@@ -60,7 +60,7 @@ public class PlusMinusTestController implements Initializable {
     	randomnumbers = new ArrayList<Integer>();
     	randomnumbers2 = new ArrayList<Integer>();
     	answers = new ArrayList<Integer>();
-		
+    
 		
 		
 	}
@@ -91,9 +91,13 @@ public class PlusMinusTestController implements Initializable {
 	public void setTest(int digit,String symbol) {
 		this.digit = digit;
 		this.symbol=symbol;
-		fillRandomNumbers();
-		generatequestion(index);
 		lbl3.setText(symbol);
+		fillRandomNumbers();
+		
+		generatequestion(index);
+		generateAnswers();
+    	fillButtons();
+		
 		System.out.println(digit);
 	}
 	
@@ -129,7 +133,7 @@ public class PlusMinusTestController implements Initializable {
 	 
 	 private void generateAnswers() {
 	    	answers.clear();
-	    	if(lbl3.getText().equals("+")) {
+	    	if(symbol.equals("+")) {
 		    	sum = Integer.parseInt(lbl1.getText()) + Integer.parseInt(lbl2.getText());
 		    	answers.add(sum);
 		    	ArrayList<Integer> newlist = new ArrayList<Integer>();

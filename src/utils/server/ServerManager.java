@@ -50,6 +50,7 @@ public class ServerManager {
 			 dataOutputStream.writeUTF("isLogin");
 			 dataOutputStream.writeUTF(usr);
 			 dataOutputStream.writeUTF(pswrd);
+			 
 			 state=(boolean) dataInputStream.readBoolean();
 			 System.out.println(state+"X");
 		} catch (IOException e) {
