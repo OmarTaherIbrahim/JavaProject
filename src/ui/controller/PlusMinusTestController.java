@@ -74,7 +74,7 @@ public class PlusMinusTestController implements Initializable {
     	}
     	
     	index++;
-    	if(index>10) {
+    	if(index==10) {
     		goToResultScreen();
     	}
     	
