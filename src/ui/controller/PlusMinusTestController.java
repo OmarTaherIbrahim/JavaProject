@@ -1,5 +1,6 @@
 package ui.controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,9 +11,13 @@ import com.jfoenix.controls.JFXButton;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
+import javafx.stage.Stage;
 
 public class PlusMinusTestController implements Initializable {
 
@@ -137,7 +142,38 @@ public class PlusMinusTestController implements Initializable {
 
     @FXML
     void ChosedAnswer(ActionEvent event) {
+    	String answerChosen=((JFXButton)event.getSource()).getText();
+    	if(answerChosen.equals(sum) ) {
+    		result++;
+    	}
+    	
+    	index++;
+    	if(index>10) {
+    		goToResultScreen();
+    	}
+    	
+    	lblscore.setText(result + "");
+    	generatequestion(index);
+    	generateAnswers();
+    	fillButtons();
 
+    }
+    
+    private void goToResultScreen() {
+      	Parent p;
+    		try {
+    			FXMLLoader L = new FXMLLoader(getClass().getResource("../FXML/ResultScreen.fxml"));
+    			p=L.load();
+    			ResultScreenController controller=L.<ResultScreenController>getController();
+    			controller.setScore(result);
+    			Scene profileSceen = new Scene(p);	
+    			Stage stage = (Stage)lbl2.getScene().getWindow();
+    			stage.setScene(profileSceen);
+    			stage.show();
+    		} catch (IOException e) {
+    			// TODO Auto-generated catch block
+    			e.printStackTrace();
+    		}
     }
 
     @FXML

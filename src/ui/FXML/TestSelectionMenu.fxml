@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<JFXTabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="630.0" minWidth="920.0" prefHeight="520.0" prefWidth="800.0" side="LEFT" stylesheets="@../../style/tabs.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.TestMenuController">
+<JFXTabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="630.0" minWidth="920.0" prefHeight="520.0" prefWidth="800.0" side="LEFT" stylesheets="@../../style/tabs.css" xmlns="http://javafx.com/javafx/8.0.191" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.TestMenuController">
    <tabs>
       <Tab fx:id="backtab" disable="true" onSelectionChanged="#gobackTab">
          <graphic>
@@ -35,16 +35,7 @@
                         <Image url="@../../res/abc_icon.png" />
                      </image>
                   </ImageView>
-                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="295.0" layoutY="312.0" prefHeight="123.0" prefWidth="132.0" style="-fx-background-radius: 25%;">
-                     <graphic>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../res/icon_027190_256.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </JFXButton>
-                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="68.0" layoutY="312.0" prefHeight="123.0" prefWidth="132.0" style="-fx-background-radius: 25%;" text="Button">
+                  <JFXButton fx:id="imageTest1" contentDisplay="GRAPHIC_ONLY" layoutX="192.0" layoutY="315.0" onAction ="#imageTestABC" prefHeight="123.0" prefWidth="132.0" style="-fx-background-radius: 25%;" text="Button">
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -63,20 +54,11 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="79.0" layoutY="315.0" prefHeight="123.0" prefWidth="132.0" style="-fx-background-radius: 25%;" text="Button">
+                  <JFXButton fx:id="imageTest2" contentDisplay="GRAPHIC_ONLY" layoutX="192.0" layoutY="315.0" onAction="#imageTestColor" prefHeight="123.0" prefWidth="132.0" style="-fx-background-radius: 25%;" text="Button">
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../res/img_quiz.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </JFXButton>
-                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="316.0" layoutY="315.0" prefHeight="123.0" prefWidth="132.0" style="-fx-background-radius: 25%;">
-                     <graphic>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../res/icon_027190_256.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -96,16 +78,7 @@
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="326.0" layoutY="325.0" prefHeight="123.0" prefWidth="132.0" style="-fx-background-radius: 25%;">
-                     <graphic>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../res/icon_027190_256.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </JFXButton>
-                  <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="100.0" layoutY="325.0" prefHeight="123.0" prefWidth="132.0" style="-fx-background-radius: 25%;" text="Button">
+                  <JFXButton fx:id="imageTest3" contentDisplay="GRAPHIC_ONLY" layoutX="192.0" layoutY="338.0" onAction="#imageTestShape" prefHeight="123.0" prefWidth="132.0" style="-fx-background-radius: 25%;" text="Button">
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -131,9 +104,9 @@
                <children>
                   <VBox layoutX="137.0" layoutY="79.0" prefHeight="283.0" prefWidth="277.0">
                      <children>
-                        <JFXButton prefHeight="93.0" prefWidth="277.0" text="Level 1" />
-                        <JFXButton layoutX="10.0" layoutY="10.0" prefHeight="95.0" prefWidth="277.0" text="Level 2" />
-                        <JFXButton layoutX="10.0" layoutY="86.0" prefHeight="94.0" prefWidth="277.0" text="Level 3" />
+                        <JFXButton fx:id="A1" onAction="#gotolevel1Additon" prefHeight="93.0" prefWidth="277.0" text="Level 1" />
+                        <JFXButton fx:id="A2" layoutX="10.0" layoutY="10.0" onAction="#gotolevel2Addition" prefHeight="95.0" prefWidth="277.0" text="Level 2" />
+                        <JFXButton fx:id="A3" layoutX="10.0" layoutY="86.0" onAction="#gotolevel3Addition" prefHeight="94.0" prefWidth="277.0" text="Level 3" />
                      </children>
                   </VBox>
                </children>
@@ -149,9 +122,9 @@
                <children>
                   <VBox layoutX="137.0" layoutY="84.0" prefHeight="283.0" prefWidth="277.0">
                      <children>
-                        <JFXButton prefHeight="93.0" prefWidth="277.0" text="Level 1" />
-                        <JFXButton layoutX="10.0" layoutY="10.0" prefHeight="95.0" prefWidth="277.0" text="Level 2" />
-                        <JFXButton layoutX="10.0" layoutY="86.0" prefHeight="94.0" prefWidth="277.0" text="Level 3" />
+                        <JFXButton fx:id="S1" onAction="#gotolevel1Subtraction" prefHeight="93.0" prefWidth="277.0" text="Level 1" />
+                        <JFXButton fx:id="S2" layoutX="10.0" layoutY="10.0" onAction="#gotolevel2Subtraction" prefHeight="95.0" prefWidth="277.0" text="Level 2" />
+                        <JFXButton fx:id="S3" layoutX="10.0" layoutY="86.0" onAction="#gotolevel3Subtraction" prefHeight="94.0" prefWidth="277.0" text="Level 3" />
                      </children>
                   </VBox>
                </children>
@@ -177,18 +150,18 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <JFXButton prefHeight="159.0" prefWidth="153.0" text="1" />
-                        <JFXButton layoutX="10.0" layoutY="10.0" prefHeight="159.0" prefWidth="153.0" text="2" GridPane.columnIndex="1" />
-                        <JFXButton layoutX="10.0" layoutY="10.0" prefHeight="159.0" prefWidth="153.0" text="3" GridPane.columnIndex="2" />
-                        <JFXButton layoutX="10.0" layoutY="10.0" prefHeight="159.0" prefWidth="153.0" text="4" GridPane.rowIndex="1" />
-                        <JFXButton layoutX="10.0" layoutY="10.0" prefHeight="159.0" prefWidth="153.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <JFXButton layoutX="10.0" layoutY="10.0" prefHeight="159.0" prefWidth="153.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <JFXButton layoutX="10.0" layoutY="10.0" prefHeight="159.0" prefWidth="153.0" text="7" GridPane.rowIndex="2" />
-                        <JFXButton layoutX="10.0" layoutY="10.0" prefHeight="159.0" prefWidth="153.0" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <JFXButton layoutX="10.0" layoutY="10.0" prefHeight="159.0" prefWidth="153.0" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <JFXButton fx:id="M1" onAction="#gotolevel1Multiplication" prefHeight="159.0" prefWidth="153.0" text="1" />
+                        <JFXButton fx:id="M2" layoutX="10.0" layoutY="10.0" onAction="#gotolevel2Multiplication" prefHeight="159.0" prefWidth="153.0" text="2" GridPane.columnIndex="1" />
+                        <JFXButton fx:id="M3" layoutX="10.0" layoutY="10.0" onAction="#gotolevel3Multiplication" prefHeight="159.0" prefWidth="153.0" text="3" GridPane.columnIndex="2" />
+                        <JFXButton fx:id="M4" layoutX="10.0" layoutY="10.0" onAction="#gotolevel4Multiplication" prefHeight="159.0" prefWidth="153.0" text="4" GridPane.rowIndex="1" />
+                        <JFXButton fx:id="M5" layoutX="10.0" layoutY="10.0" onAction="#gotolevel5Multiplication" prefHeight="159.0" prefWidth="153.0" text="5" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <JFXButton fx:id="M6" layoutX="10.0" layoutY="10.0" onAction="#gotolevel6Multiplication" prefHeight="159.0" prefWidth="153.0" text="6" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <JFXButton fx:id="M7" layoutX="10.0" layoutY="10.0" onAction="#gotolevel7Multiplication" prefHeight="159.0" prefWidth="153.0" text="7" GridPane.rowIndex="2" />
+                        <JFXButton fx:id="M8" layoutX="10.0" layoutY="10.0" onAction="#gotolevel8Multiplication" prefHeight="159.0" prefWidth="153.0" text="8" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <JFXButton fx:id="M9" layoutX="10.0" layoutY="10.0" onAction="#gotolevel9Multiplication" prefHeight="159.0" prefWidth="153.0" text="9" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                      </children>
                   </GridPane>
-                  <JFXButton layoutX="148.0" layoutY="388.0" prefHeight="80.0" prefWidth="255.0" text="10" />
+                  <JFXButton fx:id="M10" layoutX="148.0" layoutY="388.0" onAction="#gotolevel10Multiplication" prefHeight="80.0" prefWidth="255.0" text="10" />
                </children>
             </AnchorPane>
         </content>

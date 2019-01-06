@@ -16,7 +16,10 @@ public class Main extends Application {
 		try {
 			stage = primaryStage;
 
-			Parent root = FXMLLoader.load(getClass().getResource("../ui/FXML/multiTest.fxml"));
+
+			Parent root = FXMLLoader.load(getClass().getResource("../ui/FXML/LoginForm.fxml"));
+
+
 
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);

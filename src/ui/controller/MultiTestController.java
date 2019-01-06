@@ -95,30 +95,34 @@ public class MultiTestController implements Initializable {
     	if(answerChosen.equals(lvl*oneto10.get(index) + "") ) {
     		result++;
     	}
-    	
     	index++;
-    	if(index>10) {
-    		Parent p;
-    		try {
-    			p = FXMLLoader.load(getClass().getResource("../FXML/Result.fxml"));
-    		
-    			Scene profileSceen = new Scene(p);	
-    			Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-    			stage.setScene(profileSceen);
-    			stage.show();
-    		} catch (IOException e) {
-    			// TODO Auto-generated catch block
-    			e.printStackTrace();
-    		}
-
+    	if(index==10) {
+    		goToResultScreen();
     	}
-    	
     	lblscore.setText(result + "");
     	generatequestion(index);
     	generateAnswers();
     	fillButtons();
     	
     }
+    
+    private void goToResultScreen() {
+      	Parent p;
+    		try {
+    			FXMLLoader L = new FXMLLoader(getClass().getResource("../FXML/ResultScreen.fxml"));
+    			p=L.load();
+    			ResultScreenController controller=L.<ResultScreenController>getController();
+    			controller.setScore(result);
+    			Scene profileSceen = new Scene(p);	
+    			Stage stage = (Stage)lbl2.getScene().getWindow();
+    			stage.setScene(profileSceen);
+    			stage.show();
+    		} catch (IOException e) {
+    			// TODO Auto-generated catch block
+    			e.printStackTrace();
+    		}
+        	
+        }
 
     @FXML
     void goback(ActionEvent event) {
