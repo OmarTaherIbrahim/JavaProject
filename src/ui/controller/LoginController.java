@@ -96,7 +96,7 @@ public class LoginController implements Initializable {
 					UserInfo.UserName = usrTxt.getText();
 					UserInfo.Password = pswrdTxt.getText();
 					Thread.sleep(800);
-					Parent p = FXMLLoader.load(getClass().getResource("../ui/FXML/Learn.fxml"));
+					Parent p = FXMLLoader.load(getClass().getResource("../FXML/MainMenufxml"));
 					Scene profileSceen = new Scene(p);
 					
 					Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
