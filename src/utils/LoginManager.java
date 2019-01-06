@@ -6,8 +6,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import data.UserInfo;
+
 public class LoginManager {
-	Connection conection;
+	static Connection conection;
+	PreparedStatement predState=null;
 	public LoginManager() {
 		conection = SqliteConnection.Connector();
 		if(conection == null) System.exit(1);
@@ -21,22 +24,31 @@ public class LoginManager {
 			return false;
 		}
 	}
+	public  void endit() {
+
+		try {
+			if (predState!=null)
+			predState.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}	
+	}
 	
 	public boolean isLogin(String usr, String pswrd) throws SQLException {
 		usr=usr.toLowerCase();
-		PreparedStatement preparedStatement=null;
 		ResultSet result=null;
 		String query="select username from users where ? = username and password = ? ";
-		preparedStatement = conection.prepareStatement(query);
-		preparedStatement.setString(1, usr);
-		preparedStatement.setString(2, pswrd);
+		predState = conection.prepareStatement(query);
+		predState.setString(1, usr);
+		predState.setString(2, pswrd);
 		
-		result = preparedStatement.executeQuery();
+		result = predState.executeQuery();
 		if(result.next()) {
 			return true;
 		}
-		if(preparedStatement!=null) {
-			preparedStatement.close();	
+		if(predState!=null) {
+			predState.close();	
 		}
 		if(result != null) {
 			result.close();
@@ -49,7 +61,6 @@ public class LoginManager {
 	public int isSignup(String usr, String email,String pswrd) throws SQLException{
 		usr=usr.toLowerCase();
 		email=email.toLowerCase();
-		PreparedStatement predState=null;
 		ResultSet result =null;
 		String query="Select * from users where username = ? or email = ?";
 		
@@ -98,11 +109,66 @@ public class LoginManager {
 	//---create account execute the update statement in to sqlite database
 	private void createAccount(String usr, String email, String pswrd) throws SQLException {
 		String sql = "Insert into users(username,email,password) values(?,?,?)";
-		PreparedStatement predState=null;
+		
 		predState=conection.prepareStatement(sql);
 		predState.setString(1, usr);
 		predState.setString(2, email);
 		predState.setString(3, pswrd);
 		predState.executeUpdate();
 	}
+	public static void UpdateAll() {
+		try {
+			String sql = "Update  users set abcLevel=?,abcXP=?,colorsLevel=?,colorsXP=?, shapesLevel=?, shapesXP=?, multiLevel=?, multiXP=?, addLevel=?, addXp=?,subLevel=?,subXP=? where username=?";
+			PreparedStatement predState=null;
+			predState=conection.prepareStatement(sql);
+			predState.setInt(1, UserInfo.AlphabetsLevel);
+			predState.setInt(2, UserInfo.AlphabetsXp);
+			predState.setInt(3, UserInfo.ColorsLevel);
+			predState.setInt(4, UserInfo.ColorsXp);
+			predState.setInt(5, UserInfo.ShapesLevel);
+			predState.setInt(6, UserInfo.ShapesXp);
+			predState.setInt(7, UserInfo.MultiplicationLevel);
+			predState.setInt(8, UserInfo.MultiplicationXp);
+			predState.setInt(9, UserInfo.AdditionLevel);
+			predState.setInt(10, UserInfo.AdditionXp);
+			predState.setInt(11, UserInfo.SubtractionLevel);
+			predState.setInt(12, UserInfo.SubtractionXp);
+	
+			predState.setString(13, UserInfo.UserName.toLowerCase());
+			predState.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+	public static void getAll() {
+		try {
+			String sql = "select abcLevel,abcXP,colorsLevel,colorsXP , shapesLevel, shapesXP, multiLevel, multiXP, addLevel, addXp,subLevel,subXP from users where username=?";
+			PreparedStatement predState=null;
+			predState=conection.prepareStatement(sql);
+			
+	
+			predState.setString(1, UserInfo.UserName.toLowerCase());
+			ResultSet result = predState.executeQuery();
+			if(result.next()) {
+				UserInfo.AlphabetsLevel=result.getInt(1);
+				UserInfo.AlphabetsXp=result.getInt(2);
+				UserInfo.ColorsLevel=result.getInt(3);
+				UserInfo.ColorsXp=result.getInt(4);
+				UserInfo.ShapesLevel=result.getInt(5);
+				UserInfo.ShapesXp=result.getInt(6);
+				UserInfo.AdditionLevel=result.getInt(7);
+				UserInfo.AdditionXp=result.getInt(8);
+				UserInfo.SubtractionLevel=result.getInt(9);
+				UserInfo.SubtractionXp=result.getInt(10);
+				UserInfo.MultiplicationLevel=result.getInt(11);
+				UserInfo.MultiplicationXp=result.getInt(12);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 }

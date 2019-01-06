@@ -15,4 +15,7 @@
     -fx-pref-width: 75;
      -fx-alignment:center ;
 }
+.jfx-button:disabled{
+	-fx-opacity: 1.0;
+}
 

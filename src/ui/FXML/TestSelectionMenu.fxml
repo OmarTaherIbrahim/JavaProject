@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<JFXTabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="630.0" minWidth="920.0" prefHeight="520.0" prefWidth="800.0" side="LEFT" stylesheets="@../../style/tabs.css" xmlns="http://javafx.com/javafx/8.0.191" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.TestMenuController">
+<JFXTabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="640.0" minWidth="920.0" prefHeight="520.0" prefWidth="800.0" side="LEFT" stylesheets="@../../style/tabs.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.TestMenuController">
    <tabs>
       <Tab fx:id="backtab" disable="true" onSelectionChanged="#gobackTab">
          <graphic>
@@ -35,7 +35,7 @@
                         <Image url="@../../res/abc_icon.png" />
                      </image>
                   </ImageView>
-                  <JFXButton fx:id="imageTest1" contentDisplay="GRAPHIC_ONLY" layoutX="192.0" layoutY="315.0" onAction ="#imageTestABC" prefHeight="123.0" prefWidth="132.0" style="-fx-background-radius: 25%;" text="Button">
+                  <JFXButton fx:id="imageTest1" contentDisplay="GRAPHIC_ONLY" layoutX="192.0" layoutY="315.0" onAction="#imageTestABC" prefHeight="123.0" prefWidth="132.0" style="-fx-background-radius: 25%;" text="Button">
                      <graphic>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -47,7 +47,7 @@
                </children></AnchorPane>
         </content>
          <graphic>
-            <JFXButton text="Alphabets" textFill="WHITE" />
+            <JFXButton disable="true" text="Alphabets" textFill="WHITE" />
          </graphic>
       </Tab>
       <Tab text="Colors">
@@ -71,7 +71,7 @@
                </children></AnchorPane>
         </content>
          <graphic>
-            <JFXButton text="Colors" textFill="WHITE" />
+            <JFXButton disable="true" text="Colors" textFill="WHITE" />
          </graphic>
       </Tab>
       <Tab text="Shapes">
@@ -95,7 +95,7 @@
                </children></AnchorPane>
         </content>
          <graphic>
-            <JFXButton text="Shapes" textFill="WHITE" />
+            <JFXButton disable="true" text="Shapes" textFill="WHITE" />
          </graphic>
       </Tab>
       <Tab text="Addition">
@@ -113,7 +113,7 @@
             </AnchorPane>
         </content>
          <graphic>
-            <JFXButton text="Addition" textFill="WHITE" />
+            <JFXButton disable="true" text="Addition" textFill="WHITE" />
          </graphic>
       </Tab>
       <Tab text="Subtraction">
@@ -131,7 +131,7 @@
             </AnchorPane>
         </content>
          <graphic>
-            <JFXButton text="Subtraction" textFill="WHITE" />
+            <JFXButton disable="true" text="Subtraction" textFill="WHITE" />
          </graphic>
       </Tab>
       <Tab text="Multiplication">
@@ -166,7 +166,7 @@
             </AnchorPane>
         </content>
          <graphic>
-            <JFXButton text="Multiplication" textFill="WHITE" />
+            <JFXButton disable="true" text="Multiplication" textFill="WHITE" />
          </graphic>
       </Tab>
    </tabs>

@@ -8,8 +8,9 @@ public class LessonList {
 	protected String [] list=new String[100];
 	protected String imgloc="/res/alphabets/";
 	protected String audioloc="/res/audio/alphabets/";
-	protected String name;
+	protected static String name;
 	protected final String extension =".png",audioExtention=".mp3";
+	
 	public LessonList(String tableName,String location,String AudioLocation){
 			ListSqlManager listSqlManger = new ListSqlManager();
 			imgloc=location;
@@ -40,7 +41,7 @@ public class LessonList {
 	public String getAudioPath(int index) {
 		return audioloc+list[index]+audioExtention;
 	}
-	public String getType() {
+	public static String getType() {
 		return name;
 	}
 }

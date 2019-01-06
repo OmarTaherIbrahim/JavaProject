@@ -112,7 +112,7 @@ public class MultiTestController implements Initializable {
     			FXMLLoader L = new FXMLLoader(getClass().getResource("../FXML/ResultScreen.fxml"));
     			p=L.load();
     			ResultScreenController controller=L.<ResultScreenController>getController();
-    			controller.setScore(result);
+    			controller.setScore(result,"Multi");
     			Scene profileSceen = new Scene(p);	
     			Stage stage = (Stage)lbl2.getScene().getWindow();
     			stage.setScene(profileSceen);

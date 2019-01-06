@@ -3,23 +3,26 @@ package utils.server;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.sql.Connection;
+import java.sql.SQLException;
+
+import utils.SqliteConnection;
 
 public class ServerManager {
 	String serverName= "localhost";
 	int port = 15000;
 	private Socket socket = null;
-	private DataInputStream objectInputStream = null;
-	private DataOutputStream objectOutputStream = null;
+	private DataInputStream dataInputStream = null;
+	private DataOutputStream  dataOutputStream = null;
+	private Connection conection;
 	public ServerManager(){
 		try {
 			socket = new Socket(InetAddress.getLocalHost(), port);
-			objectInputStream = new DataInputStream(socket.getInputStream());
-			objectOutputStream = new DataOutputStream(socket.getOutputStream());
+			 dataInputStream = new DataInputStream(socket.getInputStream());
+			 dataOutputStream = new DataOutputStream(socket.getOutputStream());
 		}catch(UnknownHostException une) {
 			
 		}catch(IOException e) {
@@ -32,8 +35,8 @@ public class ServerManager {
 	public void close() {
 		try {
 			socket.close();
-			objectInputStream.close();
-			objectOutputStream.close();
+			 dataInputStream.close();
+			 dataOutputStream.close();
 		}catch(IOException e) {
 			
 		}catch(Exception e) {
@@ -41,9 +44,25 @@ public class ServerManager {
 		}
 	}
 	
+	public boolean isLogin(String usr, String pswrd) throws SQLException {
+		boolean state=false;
+		try {
+			 dataOutputStream.writeUTF("isLogin");
+			 dataOutputStream.writeUTF(usr);
+			 dataOutputStream.writeUTF(pswrd);
+			 state=(boolean) dataInputStream.readBoolean();
+			 System.out.println(state+"X");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return state;
+	}
+	
 	public void sendString() {
 		try {
-			objectOutputStream.writeUTF("this is a message");
+			 dataOutputStream.writeUTF("this is a message");
 		
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -52,7 +71,7 @@ public class ServerManager {
 	}
 	public boolean sendLoginInfo() {
 		try {
-//			ObjectOutputStream
+//			 dataOutputStream
 		}catch(Exception e){
 			
 		}

@@ -21,98 +21,12 @@ import javafx.stage.Stage;
 
 public class PlusMinusTestController implements Initializable {
 
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
-		setTest(1, "+");
-		fillRandomNumbers();
-		generatequestion(index);
-	}
-	
-	public void setTest(int digit,String symbol) {
-		this.digit = digit;
-		lbl3.setText(symbol);
-		
-	}
-	
-	private void fillRandomNumbers() {
-		if(digit == 1) {
-			for(int i = 0; i<10;i++) 
-				randomnumbers.add(i);
-		}
-		else if(digit ==2) {
-			for(int i = 10; i<100; i++)
-				randomnumbers.add(i);
-			}
-		else {
-			for(int i = 100; i<1000;i++)
-				randomnumbers.add(i);
-		}
-		Collections.shuffle(randomnumbers);
-	}
-	
-	 private void generatequestion(int index) {
-		 index1 = new Random().nextInt(randomnumbers.size());
-		 lbl1.setText(randomnumbers.get(index1 ).toString());
-		 lbl1.setText(randomnumbers.get(index1 ).toString());
-	    	generateAnswers();
-	    	fillButtons();
-	    }
-	 
-	
-	 
-	 private void generateAnswers() {
-	    	answers.clear();
-	    	index1 = new Random().nextInt(randomnumbers.size());
-	    	if(lbl3.getText().equals("+")) {
-	    	sum = Integer.parseInt(lbl1.getText()) + Integer.parseInt(lbl2.getText());
-	    	answers.add(sum);
-	    	ArrayList<Integer> newlist = new ArrayList<Integer>();
-	    	for(int i = 0; i<=randomnumbers.size(); i++) {
-	    		if(i == index) {
-	    			continue;
-	    		}
-	    		newlist.add(i);
-	    	}
-	    	Collections.shuffle(newlist);
-	    	for(int i = 1; i<randomnumbers.size(); i++) {
-	    		answers.add(newlist.get(index1)+newlist.get(index1));
-	    	}
-	    	}
-	    	else {
-	    		sum = Integer.parseInt(lbl1.getText()) - Integer.parseInt(lbl2.getText());
-		    	answers.add(sum);
-		    	ArrayList<Integer> newlist = new ArrayList<Integer>();
-		    	for(int i = 0; i<=randomnumbers.size(); i++) {
-		    		if(i == index) {
-		    			continue;
-		    		}
-		    		newlist.add(i);
-		    	}
-		    	Collections.shuffle(newlist);
-		    	for(int i = 1; i<randomnumbers.size(); i++) {
-		    		answers.add(newlist.get(index1)-newlist.get(index1));
-		    	}
-		    	}
-	    	}
-	 
-	 private void fillButtons() {
-	    	ArrayList<Integer> indexes=new ArrayList<Integer>();
-	    	for(int i=0;i<4;i++) {
-	    		indexes.add(i);
-	    	}
-	    	Collections.shuffle(indexes);
-	    	btn1.setText(String.valueOf(answers.get(indexes.get(0))));
-	    	btn2.setText(String.valueOf(answers.get(indexes.get(1))));
-	    	btn3.setText(String.valueOf(answers.get(indexes.get(2))));
-	    	btn4.setText(String.valueOf(answers.get(indexes.get(3))));
-	    }
+
 
 	private int digit,result=0,index=0,sum;
 	private String symbol;
 	 private ArrayList<Integer> answers;
-	 private ArrayList<Integer> randomnumbers;
-	  private int index1;
+	 private ArrayList<Integer> randomnumbers,randomnumbers2;
     @FXML
     private Tab backtab;
 
@@ -139,11 +53,23 @@ public class PlusMinusTestController implements Initializable {
 
     @FXML
     private Label lblscore;
+    @Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
+    	index=0;
+    	randomnumbers = new ArrayList<Integer>();
+    	randomnumbers2 = new ArrayList<Integer>();
+    	answers = new ArrayList<Integer>();
+		
+		
+		
+	}
+    
 
     @FXML
     void ChosedAnswer(ActionEvent event) {
     	String answerChosen=((JFXButton)event.getSource()).getText();
-    	if(answerChosen.equals(sum) ) {
+    	if(answerChosen.equals(sum+"") ) {
     		result++;
     	}
     	
@@ -159,32 +85,130 @@ public class PlusMinusTestController implements Initializable {
 
     }
     
-    private void goToResultScreen() {
-      	Parent p;
-    		try {
-    			FXMLLoader L = new FXMLLoader(getClass().getResource("../FXML/ResultScreen.fxml"));
-    			p=L.load();
-    			ResultScreenController controller=L.<ResultScreenController>getController();
-    			controller.setScore(result);
-    			Scene profileSceen = new Scene(p);	
-    			Stage stage = (Stage)lbl2.getScene().getWindow();
-    			stage.setScene(profileSceen);
-    			stage.show();
-    		} catch (IOException e) {
-    			// TODO Auto-generated catch block
-    			e.printStackTrace();
-    		}
-    }
-
-    @FXML
-    void goback(ActionEvent event) {
-
-    }
-
-    @FXML
-    void gobackTab(ActionEvent event) {
-
-    }
-
+    
+	
+	
+	public void setTest(int digit,String symbol) {
+		this.digit = digit;
+		this.symbol=symbol;
+		fillRandomNumbers();
+		generatequestion(index);
+		lbl3.setText(symbol);
+		System.out.println(digit);
+	}
+	
+	private void fillRandomNumbers() {
+		if(digit == 1) {
+			for(int i = 0; i<10;i++) {
+				randomnumbers.add(i);
+				randomnumbers2.add(i);
+			}
+		}else if(digit ==2) {
+			for(int i = 10; i<100; i++) {
+				randomnumbers.add(i);
+				randomnumbers2.add(i);
+			}
+		}else {
+			for(int i = 100; i<1000;i++) {
+				randomnumbers.add(i);
+				randomnumbers2.add(i);
+			}
+		}
+		Collections.shuffle(randomnumbers);
+		Collections.shuffle(randomnumbers2);
+	}
+	
+	 private void generatequestion(int index) {
+		 lbl1.setText(randomnumbers.get(index).toString());
+		 lbl2.setText(randomnumbers2.get(index ).toString());
+		 generateAnswers();
+		 fillButtons();
+	 }
+	 
+	
+	 
+	 private void generateAnswers() {
+	    	answers.clear();
+	    	if(lbl3.getText().equals("+")) {
+		    	sum = Integer.parseInt(lbl1.getText()) + Integer.parseInt(lbl2.getText());
+		    	answers.add(sum);
+		    	ArrayList<Integer> newlist = new ArrayList<Integer>();
+		    	for(int i = 0; i<=randomnumbers.size(); i++) {
+		    		if(i == index) {
+		    			continue;
+		    		}
+		    		newlist.add(i);
+		    	}
+		    	Collections.shuffle(newlist);
+		    	for(int i = 1; i<4; i++) {
+		    		answers.add(randomnumbers.get(newlist.get(i))-randomnumbers2.get(newlist.get(i)));
+	    		}
+	    	}
+	    	else {
+	    		sum = Integer.parseInt(lbl1.getText()) - Integer.parseInt(lbl2.getText());
+		    	answers.add(sum);
+		    	ArrayList<Integer> newlist = new ArrayList<Integer>();
+		    	for(int i = 0; i<=randomnumbers.size(); i++) {
+		    		if(i == index) {
+		    			continue;
+		    		}
+		    		newlist.add(i);
+		    	}
+		    	Collections.shuffle(newlist);
+		    	for(int i = 1; i<4; i++) {
+		    		answers.add(randomnumbers.get(newlist.get(i))-randomnumbers2.get(newlist.get(i)));
+		    	}
+		    }
+	    }
+	 
+		 private void fillButtons() {
+		    	ArrayList<Integer> indexes=new ArrayList<Integer>();
+		    	for(int i=0;i<4;i++) {
+		    		indexes.add(i);
+		    	}
+		    	Collections.shuffle(indexes);
+		    	btn1.setText(String.valueOf(answers.get(indexes.get(0))));
+		    	btn2.setText(String.valueOf(answers.get(indexes.get(1))));
+		    	btn3.setText(String.valueOf(answers.get(indexes.get(2))));
+		    	btn4.setText(String.valueOf(answers.get(indexes.get(3))));
+		 }
+	  
+		 private void goToResultScreen() {
+		    Parent p;
+			try {
+				FXMLLoader L = new FXMLLoader(getClass().getResource("../FXML/ResultScreen.fxml"));
+				p=L.load();
+				ResultScreenController controller=L.<ResultScreenController>getController();
+				controller.setScore(result,symbol);
+				Scene profileSceen = new Scene(p);	
+				Stage stage = (Stage)lbl2.getScene().getWindow();
+				stage.setScene(profileSceen);
+				stage.show();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		 }
+	
+	    @FXML
+	    void goback(ActionEvent event) {
+	    	Parent p;
+			try {
+				FXMLLoader L = new FXMLLoader(getClass().getResource("../FXML/TestSelectionMenu.fxml"));
+				p=L.load();
+				Scene profileSceen = new Scene(p);	
+				Stage stage = (Stage)lbl2.getScene().getWindow();
+				stage.setScene(profileSceen);
+				stage.show();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	    }
+	
+	    @FXML
+	    void gobackTab(ActionEvent event) {
+	
+	    }
 
 }

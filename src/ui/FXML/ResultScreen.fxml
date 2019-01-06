@@ -7,9 +7,10 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<JFXTabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="450.0" minWidth="800.0" prefHeight="520.0" prefWidth="800.0" side="LEFT" stylesheets="@../../style/tabs.css" xmlns="http://javafx.com/javafx/8.0.191" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.ResultScreenController">
+<JFXTabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="640.0" minWidth="920.0" prefHeight="520.0" prefWidth="800.0" side="LEFT" stylesheets="@../../style/tabs.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.ResultScreenController">
    <tabs>
       <Tab fx:id="backtab" disable="true" onSelectionChanged="#gobackTab">
          <graphic>
@@ -37,7 +38,7 @@
             </JFXButton>
          </graphic>
       </Tab>
-      <Tab>
+      <Tab style="visibility: false;">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
@@ -61,6 +62,7 @@
                               <Font size="58.0" />
                            </font>
                         </Label>
+                        <StackPane fx:id="stackPane" layoutX="94.0" layoutY="350.0" prefHeight="235.0" prefWidth="323.0" />
                      </children>
                   </AnchorPane>
                </children>

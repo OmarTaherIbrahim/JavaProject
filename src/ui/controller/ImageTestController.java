@@ -69,6 +69,8 @@ public class ImageTestController implements Initializable {
     	fillRandomNumbers();
     	setQuestion(currIndex);
     }
+    
+    
     private void fillRandomNumbers() {
     	for(int i=0;i<lessonlist.getSize();i++) {
     		randomNumbers.add(i);
@@ -129,7 +131,7 @@ public class ImageTestController implements Initializable {
     			FXMLLoader L = new FXMLLoader(getClass().getResource("../FXML/ResultScreen.fxml"));
     			p=L.load();
     			ResultScreenController controller=L.<ResultScreenController>getController();
-    			controller.setScore(result);
+    			controller.setScore(result,lessonlist.getType());
     			Scene profileSceen = new Scene(p);	
     			Stage stage = (Stage)num_of_questions.getScene().getWindow();
     			stage.setScene(profileSceen);

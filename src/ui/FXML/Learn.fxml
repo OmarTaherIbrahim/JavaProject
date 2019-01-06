@@ -54,7 +54,7 @@
                                  </font>
                               </Label>
                               <MediaView fx:id="mediaView" fitHeight="25.0" fitWidth="100.0" />
-                              <JFXButton contentDisplay="GRAPHIC_ONLY" onAction="#playAudio" prefHeight="60.0" prefWidth="227.0">
+                              <JFXButton buttonType="RAISED" contentDisplay="GRAPHIC_ONLY" onAction="#playAudio" prefHeight="60.0" prefWidth="227.0">
                                  <graphic>
                                     <ImageView fitHeight="50.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                                        <image>

@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="530.0" maxWidth="800.0" minHeight="530.0" minWidth="800.0" prefHeight="530.0" prefWidth="800.0" stylesheets="@../../style/Login.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.LoginController">
+<AnchorPane maxHeight="530.0" maxWidth="800.0" minHeight="640.0" minWidth="920.0" prefHeight="530.0" prefWidth="800.0" stylesheets="@../../style/Login.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.LoginController">
    <children>
       <AnchorPane prefHeight="541.0" prefWidth="376.0">
          <children>
@@ -23,7 +23,6 @@
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor></JFXPasswordField>
-            <JFXButton fx:id="loginBtn" buttonType="RAISED" layoutX="285.0" layoutY="321.0" onAction="#Login" ripplerFill="#f9690e" text="Login" />
             <Hyperlink layoutX="53.0" layoutY="296.0" onAction="#signupLink" text="Don't have account?" textFill="#4df777" />
             <Label fx:id="isConnectedTxt" layoutY="21.0" prefHeight="84.0" prefWidth="395.0" style="-fx-alignment: center;" textAlignment="CENTER">
                <font>
@@ -40,16 +39,21 @@
                   <Image url="@../../res/icon/login/password.png" />
                </image>
             </ImageView>
+            <JFXButton fx:id="loginBtn" buttonType="RAISED" layoutX="270.0" layoutY="337.0" onAction="#Login" prefHeight="36.0" prefWidth="67.0" styleClass="loginbtn" text="Login">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </JFXButton>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="400.0" layoutY="5.0" prefHeight="530.0" prefWidth="414.0">
+      <AnchorPane layoutX="479.0" layoutY="14.0" prefHeight="530.0" prefWidth="414.0">
          <children>
             <Hyperlink layoutX="147.0" layoutY="375.0" onAction="#loginLink" text="Have an Account?" textFill="#4df777" />
             <JFXTextField fx:id="usrTxtSignup" focusColor="#03ff95" layoutX="82.0" layoutY="122.0" prefHeight="26.0" prefWidth="251.0" promptText="Username" />
             <JFXTextField fx:id="emailTxtSignup" focusColor="#03ff95" layoutX="82.0" layoutY="164.0" prefHeight="26.0" prefWidth="251.0" promptText="Email" />
             <JFXPasswordField fx:id="pswrdTxtSignup" layoutX="82.0" layoutY="209.0" prefHeight="27.0" prefWidth="251.0" promptText="Password" />
             <JFXPasswordField fx:id="confirmTxtSignup" layoutX="82.0" layoutY="252.0" prefHeight="27.0" prefWidth="251.0" promptText="Confirm Password" />
-            <JFXButton layoutX="148.0" layoutY="411.0" onAction="#signUpBtn" styleClass="loginbtn" text="Create Account!" />
+            <JFXButton buttonType="RAISED" layoutX="148.0" layoutY="411.0" onAction="#signUpBtn" styleClass="loginbtn" text="Create Account!" />
             <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="35.0" layoutY="253.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../res/icon/login/password.png" />
@@ -77,12 +81,12 @@
             </Label>
          </children>
       </AnchorPane>
-      <ImageView fx:id="leftSideImg" fitHeight="612.0" fitWidth="573.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="93.0" AnchorPane.leftAnchor="-130.0" AnchorPane.topAnchor="-50.0">
+      <ImageView fx:id="leftSideImg" fitHeight="769.0" fitWidth="609.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.bottomAnchor="-79.0" AnchorPane.leftAnchor="-130.0" AnchorPane.topAnchor="-50.0">
          <image>
             <Image url="@../../res/icon/login/signup.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="rightSideImg" fitHeight="553.0" fitWidth="560.0" layoutX="392.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-10.62286376953125" AnchorPane.rightAnchor="-152.0" AnchorPane.topAnchor="0.0">
+      <ImageView fx:id="rightSideImg" fitHeight="798.0" fitWidth="678.0" layoutX="360.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="-158.0" AnchorPane.rightAnchor="-118.0" AnchorPane.topAnchor="0.0">
          <image>
             <Image url="@../../res/alphabets/Dog.png" />
          </image>

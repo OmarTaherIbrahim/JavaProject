@@ -32,7 +32,7 @@
                </children></AnchorPane>
         </content>
          <graphic>
-            <JFXButton text="Alphabets" textFill="WHITE" />
+            <JFXButton disable="true" text="Alphabets" textFill="WHITE" />
          </graphic>
       </Tab>
       <Tab text="Colors">
@@ -43,7 +43,7 @@
                </children></AnchorPane>
         </content>
          <graphic>
-            <JFXButton text="Colors" textFill="WHITE" />
+            <JFXButton disable="true" text="Colors" textFill="WHITE" />
          </graphic>
       </Tab>
       <Tab text="Shapes">
@@ -54,7 +54,7 @@
                </children></AnchorPane>
         </content>
          <graphic>
-            <JFXButton text="Shapes" textFill="WHITE" />
+            <JFXButton disable="true" text="Shapes" textFill="WHITE" />
          </graphic>
       </Tab>
       <Tab text="Addition">
@@ -66,7 +66,7 @@
             </AnchorPane>
         </content>
          <graphic>
-            <JFXButton text="Addition" textFill="WHITE" />
+            <JFXButton disable="true" text="Addition" textFill="WHITE" />
          </graphic>
       </Tab>
       <Tab text="Subtraction">
@@ -78,7 +78,7 @@
             </AnchorPane>
         </content>
          <graphic>
-            <JFXButton text="Subtraction" textFill="WHITE" />
+            <JFXButton disable="true" text="Subtraction" textFill="WHITE" />
          </graphic>
       </Tab>
       <Tab text="Multiplication">
@@ -90,7 +90,7 @@
             </AnchorPane>
         </content>
          <graphic>
-            <JFXButton text="Multiplication" textFill="WHITE" />
+            <JFXButton disable="true" text="Multiplication" textFill="WHITE" />
          </graphic>
       </Tab>
    </tabs>

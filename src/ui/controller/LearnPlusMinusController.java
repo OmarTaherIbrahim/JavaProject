@@ -151,6 +151,7 @@ public class LearnPlusMinusController implements Initializable {
 		}
 
     }
+    
     @FXML
     void gobackTab(ActionEvent event) {
 

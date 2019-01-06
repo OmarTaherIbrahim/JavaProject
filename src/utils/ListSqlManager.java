@@ -37,6 +37,7 @@ public class ListSqlManager {
 		
 		if(result!=null)result.close();
 	}
+	
 	public String[] getArray(String tableName,String column) throws SQLException ,ArrayIndexOutOfBoundsException{
 		String [] ary;
 		int size=1;
@@ -61,6 +62,7 @@ public class ListSqlManager {
 		if(result!=null)result.close();
 		return ary;
 	}
+	
 	public void insertArray(String [] ary, String tableName,String column) throws SQLException {
 		String sql = "Insert into "+tableName+"("+column +") values(?);";
 		PreparedStatement prepStatement =conn.prepareStatement(sql);

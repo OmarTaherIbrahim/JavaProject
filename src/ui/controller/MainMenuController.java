@@ -15,6 +15,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import utils.LevelManager;
+import utils.LoginManager;
 
 public class MainMenuController implements Initializable{
 
@@ -91,7 +93,9 @@ public class MainMenuController implements Initializable{
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		// TODO Auto-generated method stub
-		 
+		LoginManager lm=new LoginManager();
+		lm.getAll();
+		usernameLabel.setText(UserInfo.UserName);
 	}
 
 }

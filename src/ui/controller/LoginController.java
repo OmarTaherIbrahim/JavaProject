@@ -22,6 +22,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import utils.LevelManager;
 import utils.ListSqlManager;
 import utils.LoginManager;
 
@@ -96,6 +97,10 @@ public class LoginController implements Initializable {
 					UserInfo.UserName = usrTxt.getText();
 					UserInfo.Password = pswrdTxt.getText();
 					Thread.sleep(800);
+
+					LoginManager lm=new LoginManager();
+					lm.UpdateAll();
+					System.out.println("asdfasdfa:"+UserInfo.AdditionLevel);
 					Parent p = FXMLLoader.load(getClass().getResource("../FXML/MainMenufxml"));
 					Scene profileSceen = new Scene(p);
 					
@@ -147,7 +152,8 @@ public class LoginController implements Initializable {
 				UserInfo.Password = pswrdTxt.getText();
 				Parent p = FXMLLoader.load(getClass().getResource("../FXML/MainMenu.fxml"));
 				Scene profileSceen = new Scene(p);
-				
+				loginManager.endit();
+				System.out.println("asdfasdfa:"+UserInfo.AdditionLevel);
 				Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
 				stage.setScene(profileSceen);
 				stage.show();

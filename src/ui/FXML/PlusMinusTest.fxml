@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<JFXTabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="450.0" minWidth="800.0" prefHeight="520.0" prefWidth="250.0" side="LEFT" stylesheets="@../../style/tabs.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.PlusMinusTestController">
+<JFXTabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="640.0" minWidth="920.0" prefHeight="520.0" prefWidth="250.0" side="LEFT" stylesheets="@../../style/tabs.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ui.controller.PlusMinusTestController">
    <tabs>
       <Tab fx:id="backtab" disable="true" onSelectionChanged="#gobackTab">
          <graphic>
-            <JFXButton minHeight="50.0" minWidth="50.0" onAction="#goback" prefHeight="200.0" prefWidth="200.0" text="Back">
+            <JFXButton minHeight="50.0" minWidth="300.0" onAction="#goback" prefHeight="200.0" prefWidth="200.0" text="Back">
                <graphic>
                   <ImageView fitHeight="43.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -24,32 +24,44 @@
             </JFXButton>
          </graphic>
       </Tab>
-      <Tab>
+      <Tab style="visibility: false;">
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <JFXButton fx:id="btn1" alignment="CENTER" contentDisplay="TEXT_ONLY" layoutX="86.0" layoutY="143.0" onAction="#ChosedAnswer" prefHeight="158.0" prefWidth="159.0" text="Button" />
-                  <JFXButton fx:id="btn2" alignment="CENTER" contentDisplay="TEXT_ONLY" layoutX="318.0" layoutY="143.0" onAction="#ChosedAnswer" prefHeight="158.0" prefWidth="159.0" />
-                  <JFXButton fx:id="btn3" alignment="CENTER" contentDisplay="TEXT_ONLY" layoutX="86.0" layoutY="301.0" onAction="#ChosedAnswer" prefHeight="158.0" prefWidth="159.0" />
-                  <JFXButton fx:id="btn4" alignment="CENTER" contentDisplay="TEXT_ONLY" layoutX="318.0" layoutY="301.0" onAction="#ChosedAnswer" prefHeight="158.0" prefWidth="159.0" />
-                  <Label fx:id="lbl1" alignment="CENTER" layoutX="130.0" layoutY="53.0" prefHeight="60.0" prefWidth="122.0" text="1">
+                  <JFXButton fx:id="btn1" alignment="CENTER" buttonType="RAISED" contentDisplay="TEXT_ONLY" layoutX="118.0" layoutY="198.0" onAction="#ChosedAnswer" prefHeight="85.0" prefWidth="400.0" style="-fx-background-color: #EEEEEE;" text="Button" textFill="#f9690e">
                      <font>
-                        <Font size="30.0" />
+                        <Font size="40.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="btn2" alignment="CENTER" buttonType="RAISED" contentDisplay="TEXT_ONLY" layoutX="118.0" layoutY="292.0" onAction="#ChosedAnswer" prefHeight="85.0" prefWidth="400.0" style="-fx-background-color: #EEEEEE;" text="Button" textFill="#f9690e">
+                     <font>
+                        <Font size="40.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="btn3" alignment="CENTER" buttonType="RAISED" contentDisplay="TEXT_ONLY" layoutX="118.0" layoutY="480.0" onAction="#ChosedAnswer" prefHeight="85.0" prefWidth="400.0" style="-fx-background-color: #EEEEEE;" textFill="#f9690e">
+                     <font>
+                        <Font size="40.0" />
+                     </font></JFXButton>
+                  <JFXButton fx:id="btn4" alignment="CENTER" buttonType="RAISED" contentDisplay="TEXT_ONLY" layoutX="118.0" layoutY="384.0" onAction="#ChosedAnswer" prefHeight="85.0" prefWidth="400.0" style="-fx-background-color: #EEEEEE;" text="Button" textFill="#f9690e">
+                     <font>
+                        <Font size="40.0" />
+                     </font></JFXButton>
+                  <Label fx:id="lbl1" alignment="CENTER" layoutX="161.0" layoutY="66.0" prefHeight="60.0" prefWidth="122.0" text="1">
+                     <font>
+                        <Font size="56.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lbl2" alignment="CENTER" layoutX="292.0" layoutY="53.0" prefHeight="60.0" prefWidth="122.0" text="1">
+                  <Label fx:id="lbl2" alignment="CENTER" layoutX="332.0" layoutY="66.0" prefHeight="60.0" prefWidth="122.0" text="1">
                      <font>
-                        <Font size="30.0" />
+                        <Font size="56.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lbl3" layoutX="254.0" layoutY="68.0" text="label">
+                  <Label fx:id="lbl3" alignment="CENTER" layoutX="282.0" layoutY="51.0" prefHeight="56.0" prefWidth="56.0" text="+">
                      <font>
-                        <Font size="20.0" />
+                        <Font size="61.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lblscore" alignment="CENTER" layoutX="245.0" layoutY="15.0" prefHeight="36.0" prefWidth="26.0" text="0" />
-                  <Label alignment="CENTER" layoutX="269.0" layoutY="21.0" prefHeight="23.0" prefWidth="13.0" text="/" />
-                  <Label layoutX="286.0" layoutY="24.0" text="10" />
+                  <Label fx:id="lblscore" alignment="CENTER" layoutX="283.0" layoutY="20.0" prefHeight="36.0" prefWidth="26.0" text="0" />
+                  <Label alignment="CENTER" layoutX="307.0" layoutY="26.0" prefHeight="23.0" prefWidth="13.0" text="/" />
+                  <Label layoutX="324.0" layoutY="29.0" text="10" />
                </children>
             </AnchorPane>
          </content>

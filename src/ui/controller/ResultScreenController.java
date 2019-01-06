@@ -8,7 +8,10 @@ import java.util.ResourceBundle;
 import com.jfoenix.controls.JFXButton;
 
 import data.UserInfo;
+import data.lists.AlphabetsList;
+import data.lists.ColorsList;
 import data.lists.LessonList;
+import data.lists.ShapesList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +21,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import ui.ring.RingProgressIndicator;
+import utils.LoginManager;
+import utils.ProgressThread;
 
 public class ResultScreenController implements Initializable {
 	
@@ -28,11 +35,55 @@ public class ResultScreenController implements Initializable {
 	}
 	
 	
-	public void setScore(int score) {
+	public void setScore(int score,String from) {
 		this.score.setText(score + "/" + 10);
+		
+		RingProgressIndicator ring =new RingProgressIndicator("circleindicator-color:#F9690E;");
+		ring.setRingWidth(300);
+		stackPane.getChildren().add(ring);
+		
+		switch(from) {
+		case"+":
+			UserInfo.addAdditionXp(score);
+			fill(ring,(int)((double)UserInfo.AdditionXp/UserInfo.GetAdditionXPCap()*100.0));
+			System.out.println(from+UserInfo.AdditionXp/UserInfo.GetAdditionXPCap());
+			break;
+		case"-":
+			UserInfo.addSubtractionXp(score);
+			fill(ring,(int)((double)UserInfo.SubtractionXp/UserInfo.GetSubtractionXPCap()*100.0));
+			System.out.println(from+UserInfo.SubtractionXp/UserInfo.GetSubtractionXPCap());
+			break;
+		case "Alphabets":
+			UserInfo.addAlphabetsXp(score);
+			fill(ring,(int)((double)UserInfo.AlphabetsXp/UserInfo.GetAlphabetsXPCap()*100.0));
+			System.out.println(from+(int)((double)UserInfo.AlphabetsXp/UserInfo.GetAlphabetsXPCap()*100.0));
+			
+			break;
+		case "Colors":
+			UserInfo.addColorXp(score);
+			fill(ring,(int)((double)UserInfo.ColorsXp/UserInfo.GetColorsXPCap()*100.0));
+			System.out.println(from+UserInfo.ColorsXp/UserInfo.GetColorsXPCap());
+			break;
+		case "Shapes":
+			UserInfo.addShapesXp(score);
+			fill(ring,(int)((double)UserInfo.ShapesXp/UserInfo.GetShapesXPCap()*100.0));
+			System.out.println(from+UserInfo.ShapesXp/UserInfo.GetShapesXPCap()*100);
+			break;
+			default:
+				UserInfo.addMultiplicationXp(score);
+				System.out.println(from+UserInfo.MultiplicationXp/UserInfo.GetMultiplicationXPCap());
+				fill(ring,(int)((double)UserInfo.MultiplicationXp/UserInfo.GetMultiplicationXPCap()*100.0));
+		}
+		LoginManager.getAll();
+		LoginManager.UpdateAll();
+		
 	}
-
-
+	private void fill(RingProgressIndicator ring,int progress) {
+		ProgressThread pt = new ProgressThread(ring, progress);
+		pt.start();
+	}	
+	@FXML 
+	private StackPane stackPane;
     @FXML
     private Tab backtab;
 
