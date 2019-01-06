@@ -55,7 +55,7 @@ will have a test System for every topic  it will be buttons for each topic
     + the score out of 10
     + the current level in this topic and a [bar](https://github.com/torakiki/fx-progress-circle) for xp
 
-
-[Colors palatte](http://bootflat.github.io/color-picker.html)
-
+## Refrences (Parts that were premade)
++ [Colors palatte](http://bootflat.github.io/color-picker.html)
 + [ui.ring](https://github.com/OmarTaherIbrahim/JavaProject/tree/master/src/ui/ring) containts code [Taken from](https://github.com/torakiki/fx-progress-circle) with a slight edit to suite our usage.
++ anythin in [res folder](https://github.com/OmarTaherIbrahim/JavaProject/tree/master/src/res)
